@@ -23,6 +23,8 @@ class Student extends CI_Controller {
 
 	public function tablesData()
 	{
+		$studentList = $this->GetStudentList();
+		echo $studentList;
 		$this->load->view('tables-data-admission');
 	}
 
