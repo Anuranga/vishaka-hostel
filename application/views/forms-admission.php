@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Name With Initials</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="nameInitials" name="nameInitials" required placeholder="Name With Initials" class="form-control"><small id="nameInitialsValidation" style="display: none; color: red" class="help-block form-text">Please Enter Name With Initials</small></div>
+                                        <div  class="col-12 col-md-9"><input type="text" id="nameInitials" name="nameInitials" required placeholder="Name With Initials" class="form-control"><small id="nameInitialsValidation" style="display: none; color: red" class="help-block form-text">Please Enter Name With Initials</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-date" class=" form-control-label">Date of Bith</label></div>

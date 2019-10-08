@@ -21,14 +21,34 @@ class Student extends CI_Controller {
 		$this->load->view('forms-admission');
 	}
 
-	public function tablesData()
+	public function pendingStudentList()
 	{
-		$this->load->view('tables-data-admission');
+		$this->load->view('pending-student-list');
+	}
+
+	public function allStudentList()
+	{
+		$this->load->view('all-student-list');
 	}
 
 	public function goingHome()
 	{
 		$this->load->view('forms-going-home');
+	}
+
+	public function dayOut()
+	{
+		$this->load->view('forms-day-out');
+	}
+
+	public function sportsOut()
+	{
+		$this->load->view('forms-sports-out');
+	}
+
+	public function otherOut()
+	{
+		$this->load->view('forms-other-out');
 	}
 
 	public function RegisterStudent()

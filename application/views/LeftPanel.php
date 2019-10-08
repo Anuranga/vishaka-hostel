@@ -10,7 +10,8 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Admission</a>
 					<ul class="sub-menu children dropdown-menu">
 						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student">Request Form</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/tablesData">List Student</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/pendingStudentList">List Student</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/allStudentList">All Student</a></li>
 					</ul>
 				</li>
 				<li class="menu-title">Users</li>
@@ -29,12 +30,17 @@
 						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/leave/securityApproval">Security</a></li>
 					</ul>
 				</li>
-				<li class="menu-title">Student</li>
+				<li class="menu-title">Student Check-in/Check-out</li>
 				<li class="menu-item-has-children dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Going Out</a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Request Forms</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/goingHome">Request Form</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/goingHome">Going Home</a></li>
 						<!--<li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Security</a></li>-->
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/dayOut">Day Out</a></li>
+
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/sportsOut">Sports Out</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/otherOut">Other Out</a></li>
+
 					</ul>
 				</li>
 				<li class="menu-title">Login</li><!-- /.menu-title -->
