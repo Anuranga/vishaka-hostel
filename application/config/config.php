@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/vishaka-hostel/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+// $config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

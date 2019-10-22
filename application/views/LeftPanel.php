@@ -9,31 +9,31 @@
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Admission</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student">Request Form</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/tablesData">List Student</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>student">Request Form</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>student/tablesData">List Student</a></li>
 					</ul>
 				</li>
 				<li class="menu-title">Users</li>
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>System User</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users">Add User</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users/usersView">View Users</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>users">Add User</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>users/usersView">View Users</a></li>
 					</ul>
 				</li>
 				<li class="menu-title">Approval</li>
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Going Home</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/leave">Principal</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/leave/securityApproval">Security</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>leave">Principal</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>leave/securityApproval">Security</a></li>
 					</ul>
 				</li>
 				<li class="menu-title">Student</li>
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Going Out</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/goingHome">Request Form</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>student/goingHome">Request Form</a></li>
 						<!--<li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Security</a></li>-->
 					</ul>
 				</li>
@@ -41,12 +41,12 @@
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url(); ?>index.php/users/login">Login</a></li>
-						<li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url(); ?>index.php/users/register">Register</a></li>
-						<li><i class="menu-icon fa fa-paper-plane"></i><a href="<?php echo base_url(); ?>index.php/users/forgetPassword">Forget Pass</a></li>
+						<li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url(); ?>users/login">Login</a></li>
+						<li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url(); ?>users/register">Register</a></li>
+						<li><i class="menu-icon fa fa-paper-plane"></i><a href="<?php echo base_url(); ?>users/forgetPassword">Forget Pass</a></li>
 					</ul>
 				</li>
 			</ul>
-		</div><!-- /.navbar-collapse -->
+		</div>
 	</nav>
 </aside>

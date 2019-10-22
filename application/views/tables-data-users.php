@@ -1,7 +1,7 @@
 <?php  include_once ('header.php')?>
 
 <body>
-<?php  include_once ('LeftPanel.php')?>
+<?php include_once ('LeftPanel.php')?>
 
     <div id="right-panel" class="right-panel">
 
