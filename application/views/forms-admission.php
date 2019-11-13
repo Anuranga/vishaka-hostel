@@ -25,12 +25,12 @@
                                     <strong class="header-menu">Personal Information </strong>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label class=" form-control-label">Full Name</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="fullName" name="fullName" placeholder="Full Name" class="form-control"><small id="fullNameValidation" style="display: none; color: red" class="help-block form-text">Please Enter Full Name</small></div>
+                                        <div class="col col-md-3"><label class=" form-control-label">Full name</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="fullName" name="fullName" placeholder="Full name" class="form-control"><small id="fullNameValidation" style="display: none; color: red" class="help-block form-text">Please Enter Full name</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Name With Initials</label></div>
-                                        <div  class="col-12 col-md-9"><input type="text" id="nameInitials" name="nameInitials" required placeholder="Name With Initials" class="form-control"><small id="nameInitialsValidation" style="display: none; color: red" class="help-block form-text">Please Enter Name With Initials</small></div>
+                                        <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Name with initials</label></div>
+                                        <div  class="col-12 col-md-9"><input type="text" id="nameInitials" name="nameInitials" required placeholder="Name with initials" class="form-control"><small id="nameInitialsValidation" style="display: none; color: red" class="help-block form-text">Please Enter Name With Initials</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-date" class=" form-control-label">Date of Bith</label></div>
@@ -41,15 +41,15 @@
                                         <div class="col-12 col-md-9"><input type="text" id="address" name="address" placeholder="Address" class="form-control"><small id="addressValidation" style="display: none; color: red" class="help-block form-text">Please Enter Address</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="input-contact" class=" form-control-label">Contact Number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="contact" name="contact" placeholder="Contact Number" class="form-control"><small id="contactValidation" style="display: none; color: red" class="help-block form-text">Please Enter Contact Number</small></div>
+                                        <div class="col col-md-3"><label for="input-contact" class=" form-control-label">Contact number</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="contact" name="contact" placeholder="Contact number" class="form-control"><small id="contactValidation" style="display: none; color: red" class="help-block form-text">Please Enter Contact number</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <strong class="header-menu">Education Information </strong>
+                                        <strong class="header-menu">Educational Information </strong>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="input-admission" class=" form-control-label">School Admission Number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="admission" name="admissonNumber" placeholder="School Admission Number" class="form-control"><small id="admissonNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter School Admission Number</small></div>
+                                        <div class="col col-md-3"><label for="input-admission" class=" form-control-label">School Admission number</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="admission" name="admissonNumber" placeholder="School Admission number" class="form-control"><small id="admissonNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter School Admission number</small></div>
                                     </div>
 
                                     <div class="row form-group">
@@ -81,26 +81,26 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <strong class="header-menu">Visitor Information </strong>
+                                        <strong class="header-menu">Visitors information </strong>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="input-visitor-name" class=" form-control-label">Visitor Name</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="visitorName" name="visitorName" placeholder="Visitor Name" class="form-control"><small id="visitorNameValidation" style="display: none; color: red" class="help-block form-text">Please Enter Visitor Name</small></div>
+                                        <div class="col col-md-3"><label for="input-visitor-name" class=" form-control-label">Visitor name</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="visitorName" name="visitorName" placeholder="Visitor name" class="form-control"><small id="visitorNameValidation" style="display: none; color: red" class="help-block form-text">Please Enter Visitor name</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="input-visitor-relationship" class=" form-control-label">Relationship With Student</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="visitorRelationship" name="visitorRelationship" placeholder="Relationship With Student" class="form-control"><small id="visitorRelationshipValidation" style="display: none; color: red" class="help-block form-text">Please Enter Relationship With Student</small></div>
+                                        <div class="col col-md-3"><label for="input-visitor-relationship" class=" form-control-label">Relationship with student</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="visitorRelationship" name="visitorRelationship" placeholder="Relationship with student" class="form-control"><small id="visitorRelationshipValidation" style="display: none; color: red" class="help-block form-text">Please Enter Relationship with student</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="input-visitor-contact-number" class=" form-control-label">Contact Number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="visitorContactNumber" name="visitorContactNumber" placeholder="Visitor Contact Number" class="form-control"><small id="visitorContactNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter contact number</small></div>
+                                        <div class="col col-md-3"><label for="input-visitor-contact-number" class=" form-control-label">Contact number</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="visitorContactNumber" name="visitorContactNumber" placeholder="Visitor Contact number" class="form-control"><small id="visitorContactNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter Contact number</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-visitor-contact-occupation" class=" form-control-label">Occupation</label></div>
                                         <div class="col-12 col-md-9"><input type="text" id="visitorOccupation" name="visitorOccupation" placeholder="Occupation" class="form-control"><small id="visitorOccupationValidation" style="display: none; color: red" class="help-block form-text">Please Enter Occupation</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="file-input" class=" form-control-label">Bank Pay Slip</label></div>
+                                        <div class="col col-md-3"><label for="file-input" class=" form-control-label">Bank Pay slip</label></div>
                                         <div class="col-12 col-md-9"><input type="file" id="filePaySlip" name="filePaySlip" class="form-control-file"></div>
                                     </div>
                                 </form>

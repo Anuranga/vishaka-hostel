@@ -1,10 +1,10 @@
-<?php  include_once ('header.php')?>
+ <?php  include_once ('header.php')?>
 <body>
 <?php  include_once ('LeftPanel.php')?>
 
 <div id="right-panel" class="right-panel">
 
-	<?php  include_once ('sub-header.php')?>
+<?php  include_once ('sub-header.php')?>
 
     <div class="content">
         <div class="animated fadeIn">
@@ -14,7 +14,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Other Out</strong>
+                            <strong>Day Out</strong>
                         </div>
                         <div class="card-body card-block">
                             <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -24,11 +24,11 @@
                                     <div class="col-12 col-md-9"><input type="text" id="input-fullname" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Out Date/Time</label></div>
+                                    <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Out Time</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-nameInitials" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="input-date" class=" form-control-label">In Date/Time</label></div>
+                                    <div class="col col-md-3"><label for="input-date" class=" form-control-label">In Time</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-date" name="input-" placeholder="Enter Email" class="form-control"><small class="help-block form-text">Please enter your email</small></div>
                                 </div>
                                 <div class="row form-group">

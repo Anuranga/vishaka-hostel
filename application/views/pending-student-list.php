@@ -14,16 +14,16 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
+                                <strong class="card-title">Pending student list</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
+											<th>Admission No</th>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Salary</th>
+                                            <th>Grade</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>

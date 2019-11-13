@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 	exit;
 }
 
-class Leave extends CI_Controller {
+class Approval extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -17,12 +17,12 @@ class Leave extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('tables-principal-approval');
+		$this->load->view('forms-principal-approval');
 	}
 
 	public function securityApproval()
 	{
-		$this->load->view('tables-security-approval');
+		$this->load->view('forms-security-approval');
 	}
 
 	public function addLogRecord()

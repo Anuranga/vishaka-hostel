@@ -20,17 +20,21 @@
                             <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
 
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label class=" form-control-label">Student Name</label></div>
+                                    <div class="col col-md-3"><label class=" form-control-label">Student name</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-fullname" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Out Date Time</label></div>
+                                    <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Out Date/Time</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-nameInitials" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="input-date" class=" form-control-label">In Date Time</label></div>
+                                    <div class="col col-md-3"><label for="input-date" class=" form-control-label">In Date/Time</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-date" name="input-" placeholder="Enter Email" class="form-control"><small class="help-block form-text">Please enter your email</small></div>
                                 </div>
+								<div class="row form-group">
+									<div class="col col-md-3"><label for="password-input" class=" form-control-label">Sports name</label></div>
+									<div class="col-12 col-md-9"><input type="text" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
+								</div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="password-input" class=" form-control-label">Reason</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
@@ -38,20 +42,16 @@
 
 
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="input-admission" class=" form-control-label">Visitor Name</label></div>
+                                    <div class="col col-md-3"><label for="input-admission" class=" form-control-label">Teacher in-charge Name</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-admission" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
                                 </div>
 
                             </form>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Submit
-                            </button>
-                            <button type="reset" class="btn btn-danger btn-sm">
-                                <i class="fa fa-ban"></i> Reset
-                            </button>
-                        </div>
+						<div class="card-footer">
+							<input type="submit" id="submitAdmission" class="btn btn-primary btn-sm"></input>
+							<input type="reset" class="btn btn-danger btn-sm"></input>
+						</div>
                     </div>
 
                 </div>

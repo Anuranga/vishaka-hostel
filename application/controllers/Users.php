@@ -41,6 +41,16 @@ class Users extends CI_Controller {
 		$this->load->view('pages-forget');
 	}
 
+	public function leave()
+	{
+		$this->load->view('forms-principal-approval');
+	}
+
+	public function securityApproval()
+	{
+		$this->load->view('forms-security-approval');
+	}
+
 	public function AddSystemUser()
 	{
 		$fname = 'Jayan';

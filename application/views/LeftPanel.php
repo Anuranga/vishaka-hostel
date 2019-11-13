@@ -9,9 +9,9 @@
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Admission</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student">Request Form</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/pendingStudentList">List Student</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/allStudentList">All Student</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student">Request form</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/pendingStudentList">Pending student list </a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/allStudentList">All student list</a></li>
 					</ul>
 				</li>
 				<li class="menu-title">Users</li>
@@ -19,18 +19,18 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>System User</a>
 					<ul class="sub-menu children dropdown-menu">
 						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users">Add User</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users/usersView">View Users</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users/usersView">Users List</a></li>
 					</ul>
 				</li>
 				<li class="menu-title">Approval</li>
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Going Home</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/leave">Principal</a></li>
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/leave/securityApproval">Security</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users/leave">Principal</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/users/securityApproval">Security</a></li>
 					</ul>
 				</li>
-				<li class="menu-title">Student Check-in/Check-out</li>
+				<li class="menu-title">Student</li>
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Request Forms</a>
 					<ul class="sub-menu children dropdown-menu">

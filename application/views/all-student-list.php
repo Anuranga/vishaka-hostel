@@ -14,17 +14,16 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">List all student</strong>
+                                <strong class="card-title">All student lis</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>ID</th>
                                             <th>Name</th>
                                             <th>Grade</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
+											<th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,13 +32,11 @@
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
                                             <td>$320,800</td>
-                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
                                             <td>Garrett Winters</td>
                                             <td>Accountant</td>
                                             <td>Tokyo</td>
-                                            <td>$170,750</td>
                                             <td>$170,750</td>
                                         </tr>
                                         <tr>
@@ -47,13 +44,11 @@
                                             <td>Junior Technical Author</td>
                                             <td>San Francisco</td>
                                             <td>$86,000</td>
-                                            <td>$86,000</td>
                                         </tr>
                                         <tr>
                                             <td>Cedric Kelly</td>
                                             <td>Senior Javascript Developer</td>
                                             <td>Edinburgh</td>
-                                            <td>$433,060</td>
                                             <td>$433,060</td>
                                         </tr>
                                         <tr>
@@ -61,13 +56,11 @@
                                             <td>Accountant</td>
                                             <td>Tokyo</td>
                                             <td>$162,700</td>
-                                            <td>$162,700</td>
                                         </tr>
                                         <tr>
                                             <td>Brielle Williamson</td>
                                             <td>Integration Specialist</td>
                                             <td>New York</td>
-                                            <td>$372,000</td>
                                             <td>$372,000</td>
                                         </tr>
                                         <tr>
@@ -75,13 +68,11 @@
                                             <td>Sales Assistant</td>
                                             <td>San Francisco</td>
                                             <td>$137,500</td>
-                                            <td>$137,500</td>
                                         </tr>
                                         <tr>
                                             <td>Rhona Davidson</td>
                                             <td>Integration Specialist</td>
                                             <td>Tokyo</td>
-                                            <td>$327,900</td>
                                             <td>$327,900</td>
                                         </tr>
 
@@ -89,7 +80,6 @@
                                             <td>Quinn Flynn</td>
                                             <td>Support Lead</td>
                                             <td>Edinburgh</td>
-                                            <td>$342,000</td>
                                             <td>$342,000</td>
                                         </tr>
                                         </tr>
