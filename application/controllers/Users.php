@@ -41,7 +41,7 @@ class Users extends CI_Controller {
 		$this->load->view('pages-forget');
 	}
 
-	public function AddSystemUser()
+	public function addSystemUser()
 	{
 		$fname = 'Jayan';
 		$lname = 'Anuranga';
@@ -68,7 +68,7 @@ class Users extends CI_Controller {
 		}*/
 	}
 
-	public function UserStatusChange()
+	public function userStatusChange()
 	{
 		$status = 1;
 		$result = $this->users->statusChange(1, $status);
@@ -80,7 +80,7 @@ class Users extends CI_Controller {
 		}*/
 	}
 
-	public function GetUsersList()
+	public function getUsersList()
 	{
 		$result = $this->users->getStudentList();
 		print_r($result);
