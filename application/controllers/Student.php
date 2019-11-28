@@ -31,7 +31,7 @@ class Student extends CI_Controller {
 		$this->load->view('forms-going-home');
 	}
 
-	public function RegisterStudent()
+	public function registerStudent()
 	{
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
@@ -65,7 +65,7 @@ class Student extends CI_Controller {
 		}
 	}
 
-	public function StudentStatusChange()
+	public function studentStatusChange()
 	{
 		$status = 2;
 		$result = $this->student->statusChange(4, $status);
@@ -77,7 +77,7 @@ class Student extends CI_Controller {
 		}*/
 	}
 
-	public function GetStudentList()
+	public function getStudentList()
 	{
 		$result = $this->student->getStudentList();
 		print_r($result);
