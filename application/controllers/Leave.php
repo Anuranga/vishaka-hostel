@@ -51,7 +51,7 @@ class Leave extends CI_Controller {
 		}*/
 	}
 
-	public function LeaveStatusChange()
+	public function leaveStatusChange()
 	{
 		$status = 2;
 		$result = $this->leave->statusChange(2, $status);
@@ -63,7 +63,7 @@ class Leave extends CI_Controller {
 		}*/
 	}
 
-	public function GetLogList()
+	public function getLogList()
 	{
 		$result = $this->leave->getLogList();
 		print_r($result);
