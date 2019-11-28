@@ -43,7 +43,7 @@ class Visitors extends CI_Controller {
 		}*/
 	}
 
-	public function VisitorStatusChange()
+	public function visitorStatusChange()
 	{
 		$status = 2;
 		$result = $this->visitors->statusChange(2, $status);
@@ -55,7 +55,7 @@ class Visitors extends CI_Controller {
 		}*/
 	}
 
-	public function GetVisitorsList()
+	public function getVisitorsList()
 	{
 		$result = $this->visitors->getVisitorsList();
 		print_r($result);
