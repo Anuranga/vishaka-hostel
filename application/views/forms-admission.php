@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-contact" class=" form-control-label">Contact Number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="contact" name="contact" placeholder="Contact Number" class="form-control"><small id="contactValidation" style="display: none; color: red" class="help-block form-text">Please Enter Contact Number</small></div>
+                                        <div class="col-12 col-md-9"><input type="phone" id="contact" name="contact" placeholder="Contact Number" class="form-control"><small id="contactValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid Contact Number</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <strong class="header-menu">Education Information </strong>
@@ -93,7 +93,11 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-visitor-contact-number" class=" form-control-label">Contact Number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="visitorContactNumber" name="visitorContactNumber" placeholder="Visitor Contact Number" class="form-control"><small id="visitorContactNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter contact number</small></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="visitorContactNumber" name="visitorContactNumber" placeholder="Visitor Contact Number" class="form-control"><small id="visitorContactNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid contact number</small></div>
+                                    </div>
+									<div class="row form-group">
+                                        <div class="col col-md-3"><label for="input-visitor-nic" class=" form-control-label">NIC Number</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="visitorNIC" name="visitorNIC" placeholder="Visitor NIC Number" class="form-control"><small id="visitorNICValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid NIC number</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-visitor-contact-occupation" class=" form-control-label">Occupation</label></div>
@@ -145,6 +149,7 @@
 			var objData = {};
 			e.preventDefault();
 			var valid = true;
+			
 			$.each(_$admission_form.serializeArray(), function(_, kv) {
 				var x = kv.value;
 				if (x == "" || x == 0) {
@@ -152,16 +157,62 @@
 					$("#"+id).show();
 					valid = false;
 
+				}else {
+					var contactNumberValidation = $('#contact').val().length;
+			
+					if(contactNumberValidation != 10){
+					  $("#contactValidation").show();
+					  valid = false;
+					}else{
+						valid = true;
+					}
+					
+					var visitorContactNumberValidation = $('#visitorContactNumber').val().length;
+					
+					if(visitorContactNumberValidation != 10){
+					  $("#visitorContactNumberValidation").show();
+					  valid = false;
+					}else{
+						valid = true;
+					}
+					
+					var visitorNicValidation = $('#visitorNIC').val().length;
+					
+					if(visitorNicValidation == 10 || visitorNicValidation == 12){
+						var nicOld = $('#visitorNIC').val().match('/^[0-9]{9}[vVxX]$/', $('#visitorNIC').val());
+						var nicNew = $('#visitorNIC').val().match('/^[0-9]{12}$/', $('#visitorNIC').val());
+
+						if(visitorNicValidation <= 10) {
+							if(nicOld == 0){
+								valid = true;
+							}
+						} else{
+							if(nicNew == 0){
+								nicError = true;
+							}
+						}
+					}else{
+						$("#visitorNicValidation").show();
+					    valid = false;
+					}
+					
+					if(valid){
+						var id = kv.name+"Validation";
+						$("#"+id).hide();
+						valid = true;
+					}
 				}
+
 				objData[kv.name] = kv.value;
-			});
+
+				console.log(objData);
+			 });
 
 			if(valid){
 				$.ajax({
 					type: "POST",
 					url: "<?php echo site_url('index.php/student/RegisterStudent'); ?>",
 					data: objData,
-					//dataType: "json",
 					success: function(response){
 						alert('success');
 						_$admission_form.trigger("reset");

@@ -207,9 +207,11 @@
 						</div>
 						<div class="row">
 							<div class="col-lg-8">
+								<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
 								<div class="card-body">
 									<!-- <canvas id="TrafficChart"></canvas>   -->
-									<div id="traffic-chart" class="traffic-chart"></div>
+									<div id="traffic-chart1" class="traffic-chart"></div>
+
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -281,93 +283,8 @@
 <script>
 	jQuery(document).ready(function($) {
 		"use strict";
-
-		// Pie chart flotPie1
-		var piedata = [
-			{ label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},
-			{ label: "Tab visits", data: [[1,33]], color: '#ef5350'},
-			{ label: "Mobile visits", data: [[1,35]], color: '#66bb6a'}
-		];
-
-		/*$.plot('#flotPie1', piedata, {
-			series: {
-				pie: {
-					show: true,
-					radius: 1,
-					innerRadius: 0.65,
-					label: {
-						show: true,
-						radius: 2/3,
-						threshold: 1
-					},
-					stroke: {
-						width: 0
-					}
-				}
-			},
-			grid: {
-				hoverable: true,
-				clickable: true
-			}
-		});*/
-		// Pie chart flotPie1  End
-		// cellPaiChart
-		var cellPaiChart = [
-			{ label: "Direct Sell", data: [[1,65]], color: '#5b83de'},
-			{ label: "Channel Sell", data: [[1,35]], color: '#00bfa5'}
-		];
-		/*$.plot('#cellPaiChart', cellPaiChart, {
-			series: {
-				pie: {
-					show: true,
-					stroke: {
-						width: 0
-					}
-				}
-			},
-			legend: {
-				show: false
-			},grid: {
-				hoverable: true,
-				clickable: true
-			}
-
-		});*/
-		// cellPaiChart End
 		// Line Chart  #flotLine5
 		var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];
-
-		/*var plot = $.plot($('#flotLine5'),[{
-				data: newCust,
-				label: 'New Data Flow',
-				color: '#fff'
-			}],
-			{
-				series: {
-					lines: {
-						show: true,
-						lineColor: '#fff',
-						lineWidth: 2
-					},
-					points: {
-						show: true,
-						fill: true,
-						fillColor: "#ffffff",
-						symbol: "circle",
-						radius: 3
-					},
-					shadowSize: 0
-				},
-				points: {
-					show: true,
-				},
-				legend: {
-					show: false
-				},
-				grid: {
-					show: false
-				}
-			});*/
 		// Line Chart  #flotLine5 End
 		// Traffic Chart using chartist
 		if ($('#traffic-chart').length) {
@@ -453,21 +370,41 @@
 			} );
 		}
 		//Traffic chart chart-js  End
-		// Bar Chart #flotBarChart
-		/*$.plot("#flotBarChart", [{
-			data: [[0, 18], [2, 8], [4, 5], [6, 13],[8,5], [10,7],[12,4], [14,6],[16,15], [18, 9],[20,17], [22,7],[24,4], [26,9],[28,11]],
-			bars: {
-				show: true,
-				lineWidth: 0,
-				fillColor: '#ffffff8a'
-			}
-		}], {
-			grid: {
-				show: false
-			}
-		});*/
-		// Bar Chart #flotBarChart End
 	});
 </script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	google.charts.load("current", {packages:['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			["Element", "Density", { role: "style" } ],
+			["Copper", 8.94, "#b87333"],
+			["Silver", 10.49, "silver"],
+			["Gold", 19.30, "gold"],
+			["Platinum", 21.45, "color: #e5e4e2"]
+		]);
+
+		var view = new google.visualization.DataView(data);
+		view.setColumns([0, 1,
+			{ calc: "stringify",
+				sourceColumn: 1,
+				type: "string",
+				role: "annotation" },
+			2]);
+
+		var options = {
+			title: "Density of Precious Metals, in g/cm^3",
+			width: 600,
+			height: 400,
+			bar: {groupWidth: "95%"},
+			legend: { position: "none" },
+		};
+		var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+		chart.draw(view, options);
+	}
+</script>
+
 </body>
 </html>

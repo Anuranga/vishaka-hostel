@@ -23,9 +23,9 @@ class Student extends CI_Controller {
 
 	public function tablesData()
 	{
-		$studentList = $this->GetStudentList();
-		echo $studentList;
-		$this->load->view('tables-data-admission');
+		$data['anyname'] = $this->GetStudentList();
+
+		$this->load->view('tables-data-admission', $data);
 	}
 
 	public function goingHome()
@@ -81,8 +81,8 @@ class Student extends CI_Controller {
 
 	public function GetStudentList()
 	{
-		$result = $this->student->getStudentList();
-		print_r($result);
+		return $this->student->getStudentList();
+		// print_r($result);
 
 		/*if ($result) {
 			$this->response($result, 200);
