@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 	exit;
 }
 
-class Daily_Expenses extends CI_Controller {
+class DailyExpenses extends CI_Controller {
 
 	function __construct()
 	{
