@@ -21,25 +21,25 @@
 
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">Student name</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="input-fullname" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="input-fullname" name="text-input" placeholder="Student name" class="form-control"><small class="form-text text-muted"></small></div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="input-nameInitials" class=" form-control-label">Out Time</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="input-nameInitials" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="input-nameInitials" name="text-input" placeholder="Out Time" class="form-control"><small class="form-text text-muted"></small></div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="input-date" class=" form-control-label">In Time</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="input-date" name="input-" placeholder="Enter Email" class="form-control"><small class="help-block form-text">Please enter your email</small></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="input-date" name="input-" placeholder="In Time" class="form-control"><small class="help-block form-text"></small></div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="password-input" class=" form-control-label">Reason</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="password-input" name="password-input" placeholder="Reason" class="form-control"><small class="help-block form-text"></small></div>
                                 </div>
 
 
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="input-admission" class=" form-control-label">Visitor name</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="input-admission" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="input-admission" name="password-input" placeholder="Visitor name" class="form-control"><small class="help-block form-text"></small></div>
                                 </div>
 
                             </form>

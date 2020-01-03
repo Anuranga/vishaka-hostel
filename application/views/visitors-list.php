@@ -10,67 +10,49 @@
         <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
+
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Pending student list</strong>
+                                <strong class="card-title">Visitors list</strong>
                             </div>
                             <div class="card-body">
-								<div style="margin-top: :50px">
-									<select name="cars">
-										<option value="volvo">All</option>
-										<option value="volvo">Accept</option>
-										<option value="saab">Pending</option>
-										<option value="fiat">Reject</option>
-										</option>
-									</select>
-								</div>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-											<th>Admission No</th>
-                                            <th>Name</th>
-                                            <th>Grade</th>
-                                            <th>Status</th>
-											<th>View</th>
+											<th>Student ID</th>
+                                            <th>Visitor ID</th>
+											<th>In Time</th>
+                                            <th>Out Time</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>15862</td>
-                                            <td>Tiger Nixon</td>
-                                            <td>06</td>
-                                            <td>Accept</td>
-                                            <td><input type="button" value="view"></td>
+                                            <td>122</td>
+                                            <td>25</td>
+											<td>Going out</td>
+                                            <td>10:20 AM</td>
                                         </tr>
-										<tr>
-											<td>14589</td>
-											<td>Stefan</td>
-											<td>06</td>
-											<td>Accept</td>
-											<td><input type="button" value="view"></td>
-										</tr>
-										<tr>
-											<td>16985</td>
-											<td>Nixon</td>
-											<td>06</td>
-											<td>Reject</td>
-											<td><input type="button" value="view"></td>
-										</tr>
-										<tr>
-											<td>19852</td>
-											<td>Tiger</td>
-											<td>07</td>
-											<td>Accept</td>
-											<td><input type="button" value="view"></td>
-										</tr>
-										<tr>
-											<td>12895</td>
-											<td>Kevin</td>
-											<td>06</td>
-											<td>Reject</td>
-											<td><input type="button" value="view"></td>
-										</tr>
+                                        <tr>
+											<td>12</td>
+											<td>36</td>
+											<td>Going out</td>
+											<td>11:45 AM</td>
+                                        </tr>
+                                        <tr>
+											<td>48</td>
+											<td>61</td>
+											<td>Sports out</td>
+											<td>2:20 pM</td>
+                                        </tr>
+                                        <tr>
+											<td>185</td>
+											<td>94</td>
+											<td>Other</td>
+											<td>09:35 AM</td>
+
+
+
                                     </tbody>
                                 </table>
                             </div>

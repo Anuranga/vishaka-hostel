@@ -7,7 +7,7 @@
             <div class="login-content">
                 <div class="login-logo">
                     <a href="Dashboard.php">
-                        <img class="align-content" src="<?php echo base_url(); ?>images/logo.png" alt="">
+                        <img class="align-content" src="<?php echo base_url(); ?>images/school.jpg" alt="">
                     </a>
                 </div>
                 <div class="login-form">

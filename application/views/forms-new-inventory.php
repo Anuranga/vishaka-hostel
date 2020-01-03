@@ -14,11 +14,26 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Sports Out</strong>
+                            <strong>New Inventory</strong>
                         </div>
                         <div class="card-body card-block">
                             <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
 
+								<div class="row form-group">
+									<div class="col col-md-3"><label for="selectLg" class=" form-control-label">Grade</label></div>
+									<div class="col-12 col-md-9">
+										<select name="house" id="house" class="form-control">
+											<option value="0">Select Grade</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+										</select>
+										<small id="houseValidation" style="display: none; color: red" class="help-block form-text">Please Select Grade</small>
+									</div>
+								</div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">Student name</label></div>
                                     <div class="col-12 col-md-9"><input type="text" id="input-fullname" name="text-input" placeholder="Student name" class="form-control"><small class="form-text text-muted"></small></div>

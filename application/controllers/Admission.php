@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 	exit;
 }
 
-class Student extends CI_Controller {
+class Admission extends CI_Controller {
 
 	function __construct()
 	{
@@ -21,42 +21,19 @@ class Student extends CI_Controller {
 		$this->load->view('forms-admission');
 	}
 
+	public function admissionform()
+	{
+		$this->load->view('forms-admission');
+	}
+
 	public function pendingStudentList()
 	{
 		$this->load->view('pending-student-list');
 	}
 
-	public function allStudentList()
-	{
-		$this->load->view('all-student-list');
-	}
-	public function requestForm()
-	{
-		$this->load->view('forms-request-form');
-	}
 
 
-	public function goingHome()
-	{
-		$this->load->view('forms-going-home');
-	}
-
-	public function dayOut()
-	{
-		$this->load->view('forms-day-out');
-	}
-
-	public function sportsOut()
-	{
-		$this->load->view('forms-sports-out');
-	}
-
-	public function otherOut()
-	{
-		$this->load->view('forms-other-out');
-	}
-
-	public function registerStudent()
+	public function RegisterStudent()
 	{
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');

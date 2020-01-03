@@ -8,43 +8,43 @@ if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 	exit;
 }
 
-class Visitors extends CI_Controller {
+class GatePass extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('StudentsModel', 'student');
+		$this->load->model('logmodel', 'leave');
 	}
 
-	public function index()
+
+
+	public function gatePass()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('forms-gate-pass');
 	}
 
-	public function visitorsRequest()
+	public function gatePassList()
 	{
-		$this->load->view('forms-visitors-request');
+		$this->load->view('gate-pass-list');
 	}
 
-	public function visitorsList()
-	{
-		$this->load->view('visitors-list');
-	}
-
-	public function addVisitor()
+	public function addLogRecord()
 	{
 		$student_id = 1;
 		$description = 'Going Home';
-		$status = '0';
+		$check_out_time = '2019-04-30';
+		$check_in_time = '2019-04-30';
+		$approval_status = '0';
 
 		$data = array(
 			'student_id' => $student_id,
-			'relationship' => $description,
-			'status' => $status,
-			'created_at' => ''
-
+			'description' => $description,
+			'check_out_time' => $check_out_time,
+			'check_in_time' => $check_in_time,
+			'created_at' => '',
+			'approval_status' => $approval_status,
 		);
 
-		$result = $this->visitors->addVisitor($data);
+		$result = $this->leave->addLog($data);
 
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
@@ -53,10 +53,10 @@ class Visitors extends CI_Controller {
 		}*/
 	}
 
-	public function VisitorStatusChange()
+	public function LeaveStatusChange()
 	{
 		$status = 2;
-		$result = $this->visitors->statusChange(2, $status);
+		$result = $this->leave->statusChange(2, $status);
 
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
@@ -65,9 +65,9 @@ class Visitors extends CI_Controller {
 		}*/
 	}
 
-	public function GetVisitorsList()
+	public function GetLogList()
 	{
-		$result = $this->visitors->getVisitorsList();
+		$result = $this->leave->getLogList();
 		print_r($result);
 
 		/*if ($result) {
@@ -78,3 +78,7 @@ class Visitors extends CI_Controller {
 	}
 
 }
+
+
+
+

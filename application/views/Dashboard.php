@@ -130,12 +130,12 @@
 						<div class="card-body">
 							<div class="stat-widget-five">
 								<div class="stat-icon dib flat-color-1">
-									<i class="pe-7s-cash"></i>
+									<i  class="menu-icon fa fa-sign-in"></i>
 								</div>
 								<div class="stat-content">
 									<div class="text-left dib">
-										<div class="stat-text">$<span class="count">23569</span></div>
-										<div class="stat-heading">Revenue</div>
+										<div class="stat-text"><span class="count">113</span></div>
+										<div class="stat-heading">In Student Count</div>
 									</div>
 								</div>
 							</div>
@@ -148,12 +148,12 @@
 						<div class="card-body">
 							<div class="stat-widget-five">
 								<div class="stat-icon dib flat-color-2">
-									<i class="pe-7s-cart"></i>
+									<i class="fa fa-sign-out"></i>
 								</div>
 								<div class="stat-content">
 									<div class="text-left dib">
-										<div class="stat-text"><span class="count">3435</span></div>
-										<div class="stat-heading">Sales</div>
+										<div class="stat-text"><span class="count">34</span></div>
+										<div class="stat-heading">Out Student Count</div>
 									</div>
 								</div>
 							</div>
@@ -166,12 +166,12 @@
 						<div class="card-body">
 							<div class="stat-widget-five">
 								<div class="stat-icon dib flat-color-3">
-									<i class="pe-7s-browser"></i>
+									<i class="fa fa-user"></i>
 								</div>
 								<div class="stat-content">
 									<div class="text-left dib">
-										<div class="stat-text"><span class="count">349</span></div>
-										<div class="stat-heading">Templates</div>
+										<div class="stat-text"><span class="count">25</span></div>
+										<div class="stat-heading">Visitors Count</div>
 									</div>
 								</div>
 							</div>
@@ -184,12 +184,12 @@
 						<div class="card-body">
 							<div class="stat-widget-five">
 								<div class="stat-icon dib flat-color-4">
-									<i class="pe-7s-users"></i>
+									<i class="fa fa-th-large"></i>
 								</div>
 								<div class="stat-content">
 									<div class="text-left dib">
-										<div class="stat-text"><span class="count">2986</span></div>
-										<div class="stat-heading">Clients</div>
+										<div class="stat-text"><span class="count">2</span></div>
+										<div class="stat-heading">Available Beds</div>
 									</div>
 								</div>
 							</div>
@@ -203,7 +203,7 @@
 				<div class="col-lg-12">
 					<div class="card">
 						<div class="card-body">
-							<h4 class="box-title">Traffic </h4>
+							<h4 class="box-title">Gate Pass </h4>
 						</div>
 						<div class="row">
 							<div class="col-lg-8">
@@ -215,29 +215,29 @@
 							<div class="col-lg-4">
 								<div class="card-body">
 									<div class="progress-box progress-1">
-										<h4 class="por-title">Visits</h4>
-										<div class="por-txt">96,930 Users (40%)</div>
+										<h4 class="por-title">Going Home</h4>
+										<div class="por-txt">30 Users (40%)</div>
 										<div class="progress mb-2" style="height: 5px;">
 											<div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
 									</div>
 									<div class="progress-box progress-2">
-										<h4 class="por-title">Bounce Rate</h4>
-										<div class="por-txt">3,220 Users (24%)</div>
+										<h4 class="por-title">Day Out</h4>
+										<div class="por-txt">20 Students (24%)</div>
 										<div class="progress mb-2" style="height: 5px;">
 											<div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
 									</div>
 									<div class="progress-box progress-2">
-										<h4 class="por-title">Unique Visitors</h4>
-										<div class="por-txt">29,658 Users (60%)</div>
+										<h4 class="por-title">Sports Out</h4>
+										<div class="por-txt">29 Students (60%)</div>
 										<div class="progress mb-2" style="height: 5px;">
 											<div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
 									</div>
 									<div class="progress-box progress-2">
-										<h4 class="por-title">Targeted  Visitors</h4>
-										<div class="por-txt">99,658 Users (90%)</div>
+										<h4 class="por-title">Others</h4>
+										<div class="por-txt">9 (90%)</div>
 										<div class="progress mb-2" style="height: 5px;">
 											<div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
@@ -374,9 +374,9 @@
 			var chart = new Chartist.Line('#traffic-chart', {
 				labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
 				series: [
-					[0, 18000, 35000,  25000,  22000,  0],
-					[0, 33000, 15000,  20000,  15000,  300],
-					[0, 15000, 28000,  15000,  30000,  5000]
+					[0, 180, 350,  250,  220,  0],
+					[0, 330, 150,  200,  150,  300],
+					[0, 150, 280,  150,  300,  50]
 				]
 			}, {
 				low: 0,
