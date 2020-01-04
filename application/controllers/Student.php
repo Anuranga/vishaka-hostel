@@ -82,13 +82,6 @@ class Student extends CI_Controller {
 	public function GetStudentList()
 	{
 		return $this->student->getStudentList();
-		// print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
 	}
 
 }
