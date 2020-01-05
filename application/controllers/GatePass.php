@@ -12,10 +12,8 @@ class GatePass extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('logmodel', 'leave');
+		$this->load->model('GatePassModel', 'gatepass');
 	}
-
-
 
 	public function gatePass()
 	{
@@ -27,25 +25,18 @@ class GatePass extends CI_Controller {
 		$this->load->view('gate-pass-list');
 	}
 
-	public function addLogRecord()
+	public function addGatePassRecord()
 	{
-		$student_id = 1;
-		$description = 'Going Home';
-		$check_out_time = '2019-04-30';
-		$check_in_time = '2019-04-30';
-		$approval_status = '0';
-
 		$data = array(
-			'student_id' => $student_id,
-			'description' => $description,
-			'check_out_time' => $check_out_time,
-			'check_in_time' => $check_in_time,
-			'created_at' => '',
-			'approval_status' => $approval_status,
+			'sid' => $this->input->post("sid"),
+			'vid' => $this->input->post("vid"),
+			'out_time' => $this->input->post("outtime"),
+			'in_time' => $this->input->post("intime"),
+			'reason' => $this->input->post("reason")
 		);
 
-		$result = $this->leave->addLog($data);
-
+		$result = $this->gatepass->addGatePass($data);
+		echo $result;
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {

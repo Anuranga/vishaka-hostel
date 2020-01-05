@@ -28,13 +28,14 @@ class Student extends CI_Controller {
 
 	public function allStudentList()
 	{
-		$this->load->view('all-student-list');
+		$data['list'] = $this->student->getStudentList();
+		$this->load->view('all-student-list', $data);
 	}
+
 	public function requestForm()
 	{
 		$this->load->view('forms-request-form');
 	}
-
 
 	public function goingHome()
 	{
@@ -104,14 +105,7 @@ class Student extends CI_Controller {
 
 	public function GetStudentList()
 	{
-		$result = $this->student->getStudentList();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
+		$this->load->view('pending-student-list');
 	}
 
 }

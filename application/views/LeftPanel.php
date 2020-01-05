@@ -18,7 +18,7 @@
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>STUDENT</a>
 					<ul class="sub-menu children dropdown-menu">
-						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/studentList">Student List</a></li>
+						<li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url(); ?>index.php/student/allStudentList">Student List</a></li>
 
 					</ul>
 				</li>

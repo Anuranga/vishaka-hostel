@@ -36,58 +36,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+									<?php foreach ($list as $arr) {?>
                                         <tr>
-                                            <td>15862</td>
-                                            <td>Tiger Nixon</td>
-                                            <td>06</td>
-                                            <td>Accept</td>
-                                            <td><input type="button" value="view"></td>
+											<td><?php echo $arr->id; ?></td>
+											<td><?php echo $arr->full_name; ?></td>
+											<td><?php echo $arr->grade; ?></td>
+											<td><?php echo $arr->status; ?></td>
+											<td></td>
                                         </tr>
-										<tr>
-											<td>14589</td>
-											<td>Stefan</td>
-											<td>06</td>
-											<td>Accept</td>
-											<td><input type="button" value="view"></td>
-										</tr>
-										<tr>
-											<td>16985</td>
-											<td>Nixon</td>
-											<td>06</td>
-											<td>Reject</td>
-											<td><input type="button" value="view"></td>
-										</tr>
-										<tr>
-											<td>19852</td>
-											<td>Tiger</td>
-											<td>07</td>
-											<td>Accept</td>
-											<td><input type="button" value="view"></td>
-										</tr>
-										<tr>
-											<td>12895</td>
-											<td>Kevin</td>
-											<td>06</td>
-											<td>Reject</td>
-											<td><input type="button" value="view"></td>
-										</tr>
+									<?php } ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-
+            </div>
+        </div>
 
         <div class="clearfix"></div>
 
 		<?php  include_once ('footer.php')?>
 
-    </div><!-- /#right-panel -->
+    </div>
 
     <!-- Right Panel -->
 

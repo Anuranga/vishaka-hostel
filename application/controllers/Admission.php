@@ -28,10 +28,9 @@ class Admission extends CI_Controller {
 
 	public function pendingStudentList()
 	{
-		$this->load->view('pending-student-list');
+		$data['list'] = $this->GetStudentList();
+		$this->load->view('pending-student-list', $data);
 	}
-
-
 
 	public function RegisterStudent()
 	{
@@ -81,14 +80,6 @@ class Admission extends CI_Controller {
 
 	public function GetStudentList()
 	{
-		$result = $this->student->getStudentList();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
+		return $this->student->getStudentList();
 	}
-
 }
