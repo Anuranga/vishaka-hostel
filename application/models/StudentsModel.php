@@ -9,10 +9,6 @@ class StudentsModel extends CI_Model {
 
 	private $hostelStudents = 'hostel-student';
 
-	function insertRequestStudent(){
-		// echo('In the model');
-	}
-
 	function addStudent($data)
 	{
 		$this->db->insert($this->hostelStudents, $data);

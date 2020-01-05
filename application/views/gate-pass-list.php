@@ -28,79 +28,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>122</td>
-                                            <td>25</td>
-											<td>Going out</td>
-                                            <td>10:20 AM</td>
-                                            <td>2:30 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>12</td>
-											<td>36</td>
-											<td>Going out</td>
-											<td>11:45 AM</td>
-											<td>2:00 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>48</td>
-											<td>61</td>
-											<td>Sports out</td>
-											<td>2:20 pM</td>
-											<td>4:30 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>185</td>
-											<td>94</td>
-											<td>Other</td>
-											<td>09:35 AM</td>
-											<td>3:30 PM</td>
-
-                                        <tr>
-											<td>122</td>
-											<td>25</td>
-											<td>Going out</td>
-											<td>10:20 AM</td>
-											<td>2:30 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>153</td>
-											<td>65</td>
-											<td>Going out</td>
-											<td>09:40 AM</td>
-											<td>2:40 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>56</td>
-											<td>25</td>
-											<td>Sports out</td>
-											<td>10:20 AM</td>
-											<td>2:50 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>75</td>
-											<td>49</td>
-											<td>Going out</td>
-											<td>11:20 AM</td>
-											<td>3:55 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>159</td>
-											<td>28</td>
-											<td>Sports out</td>
-											<td>10:30 AM</td>
-											<td>2:30 PM</td>
-                                        </tr>
-                                        <tr>
-											<td>142</td>
-											<td>88</td>
-											<td>Sports out</td>
-											<td>08:45 AM</td>
-											<td>2:30 PM</td>
-                                        </tr>
-
-
-
+									<?php foreach ($list as $arr) {?>
+										<tr>
+											<td><?php echo $arr->sid; ?></td>
+											<td><?php echo $arr->vid; ?></td>
+											<td><?php echo $arr->reason; ?></td>
+											<td><?php echo $arr->out_time; ?></td>
+											<td><?php echo $arr->in_time; ?></td>
+											<td></td>
+										</tr>
+									<?php } ?>
                                     </tbody>
                                 </table>
                             </div>

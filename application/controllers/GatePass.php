@@ -22,7 +22,8 @@ class GatePass extends CI_Controller {
 
 	public function gatePassList()
 	{
-		$this->load->view('gate-pass-list');
+		$data['list'] = $this->gatepass->getGatepassList();
+		$this->load->view('gate-pass-list', $data);
 	}
 
 	public function addGatePassRecord()
@@ -36,7 +37,8 @@ class GatePass extends CI_Controller {
 		);
 
 		$result = $this->gatepass->addGatePass($data);
-		echo $result;
+
+		echo "Success";
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {
@@ -53,18 +55,6 @@ class GatePass extends CI_Controller {
 			$this->response(array('status' => 'failed'));
 		} else {
 			$this->response(array('status' => 'success'));
-		}*/
-	}
-
-	public function GetLogList()
-	{
-		$result = $this->leave->getLogList();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
 		}*/
 	}
 

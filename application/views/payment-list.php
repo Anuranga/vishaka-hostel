@@ -27,32 +27,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>122</td>
-                                            <td>25</td>
-											<td>Going out</td>
-                                            <td>10:20 AM</td>
-                                        </tr>
-                                        <tr>
-											<td>12</td>
-											<td>36</td>
-											<td>Going out</td>
-											<td>11:45 AM</td>
-                                        </tr>
-                                        <tr>
-											<td>48</td>
-											<td>61</td>
-											<td>Sports out</td>
-											<td>2:20 pM</td>
-                                        </tr>
-                                        <tr>
-											<td>185</td>
-											<td>94</td>
-											<td>Other</td>
-											<td>09:35 AM</td>
-
-
-
+									<?php foreach ($list as $arr) {?>
+										<tr>
+											<td><?php echo $arr->sid; ?></td>
+											<td><?php echo $arr->date; ?></td>
+											<td><?php echo $arr->month; ?></td>
+											<td><?php echo $arr->invoice_no; ?></td>
+										</tr>
+									<?php } ?>
                                     </tbody>
                                 </table>
                             </div>

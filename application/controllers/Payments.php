@@ -13,7 +13,7 @@ class Payments extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('StudentsModel', 'student');
+		$this->load->model('PaymentModel', 'payment');
 	}
 
 	public function index()
@@ -25,43 +25,24 @@ class Payments extends CI_Controller {
 	{
 		$this->load->view('forms-new-payment');
 	}
+
 	public function paymentList()
 	{
-		$this->load->view('payment-list');
+		$data['list'] = $this->payment->getPaymentList();
+		$this->load->view('payment-list', $data);
 	}
 
-	public function RegisterStudent()
+	public function addPayment()
 	{
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
+		$data = array(
+			'sid' => $this->input->post("sid"),
+			'date' => $this->input->post("date"),
+			'month' => $this->input->post("month"),
+			'invoice_no' => $this->input->post("invoice")
+		);
 
-		$this->form_validation->set_rules('fullName', "Full Name", 'required');
-		$this->form_validation->set_rules('nameInitials', "Name Initials", 'required');
-		$this->form_validation->set_rules('birthDate', "Birth Day", 'required');
-
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('forms-admission');
-		} else {
-			$full_name = $this->input->post("fullName");
-			$dob = $this->input->post("birthDate");
-			$address = $this->input->post("address");
-			$contact_number = $this->input->post("contact");
-			$grade = $this->input->post("grade");
-			$status = '0';
-
-			$data = array(
-				'full_name' => $full_name,
-				'dob' => $dob,
-				'address' => $address,
-				'contact_number' => $contact_number,
-				'grade' => $grade,
-				'status' => $status,
-			);
-
-			$result = $this->student->addStudent($data);
-
-			echo "Success";
-		}
+		$result = $this->payment->addPayment($data);
+		echo "Success";
 	}
 
 	public function StudentStatusChange()
