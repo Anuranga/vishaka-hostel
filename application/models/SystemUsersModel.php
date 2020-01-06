@@ -9,7 +9,6 @@ class SystemUsersModel extends CI_Model {
 
 	private $system_user = 'system_users';
 
-
 	function addSystemUser($data)
 	{
 		return	$this->db->insert($this->system_user, $data);

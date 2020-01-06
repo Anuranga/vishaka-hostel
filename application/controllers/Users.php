@@ -18,7 +18,7 @@ class Users extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('forms-basic');
+		$this->load->view('forms-add-systemuser');
 	}
 
 	public function usersView()
@@ -51,26 +51,19 @@ class Users extends CI_Controller {
 		$this->load->view('forms-security-approval');
 	}
 
-	public function AddSystemUser()
+	public function addSystemUser()
 	{
-		$fname = 'Jayan';
-		$lname = 'Anuranga';
-		$password = '34Ampara';
-		$phone = '778990427';
-		$user_type = '7';
-		$status = '0';
-
 		$data = array(
-			'fname' => $fname,
-			'lname' => $lname,
-			'phone' => $phone,
-			'password' => $password,
-			'user_type' => $user_type,
-			'status' => $status,
+			'fname' => $this->input->post("fname"),
+			'lname' => $this->input->post("lname"),
+			'phone' => $this->input->post("mobile"),
+			'password' => $this->input->post("password"),
+			'user_type' => $this->input->post("user-type"),
+			'status' => '0'
 		);
 
 		$result = $this->users->addSystemUser($data);
-
+		echo "Success";
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {
