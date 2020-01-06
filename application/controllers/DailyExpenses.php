@@ -51,38 +51,24 @@ class DailyExpenses extends CI_Controller {
 		$this->load->view('forms-other-out');
 	}
 
-	public function RegisterStudent()
+	public function addExpenses()
 	{
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
+		$data = array(
+			'fname' => $this->input->post("date"),
+			'lname' => $this->input->post("category"),
+			'phone' => $this->input->post("description"),
+			'password' => $this->input->post("amount"),
+			//'user_type' => $this->input->post("user-type"),
+			//'status' => '0'
+		);
 
-		$this->form_validation->set_rules('fullName', "Full Name", 'required');
-		$this->form_validation->set_rules('nameInitials', "Name Initials", 'required');
-		$this->form_validation->set_rules('birthDate', "Birth Day", 'required');
-
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('forms-admission');
+		$result = $this->users->addSystemUser($data);
+		echo "Success";
+		/*if ($result === FALSE) {
+			$this->response(array('status' => 'failed'));
 		} else {
-			$full_name = $this->input->post("fullName");
-			$dob = $this->input->post("birthDate");
-			$address = $this->input->post("address");
-			$contact_number = $this->input->post("contact");
-			$grade = $this->input->post("grade");
-			$status = '0';
-
-			$data = array(
-				'full_name' => $full_name,
-				'dob' => $dob,
-				'address' => $address,
-				'contact_number' => $contact_number,
-				'grade' => $grade,
-				'status' => $status,
-			);
-
-			$result = $this->student->addStudent($data);
-
-			echo "Success";
-		}
+			$this->response(array('status' => 'success'));
+		}*/
 	}
 
 	public function StudentStatusChange()
