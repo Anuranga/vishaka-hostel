@@ -21,7 +21,7 @@ class SystemUsersModel extends CI_Model {
 		return $this->db->update($this->system_user, $data);
 	}
 
-	function getStudentList()
+	function getSystemUserList()
 	{
 		$query = $this->db->get($this->system_user);
 

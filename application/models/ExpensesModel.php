@@ -5,7 +5,7 @@
  * Date: 26/4/2019
  * Time: 8:30 PM
  */
-class paymentModel extends CI_Model {
+class ExpensesModel extends CI_Model {
 
 	private $expenses = 'expenses';
 

@@ -20,27 +20,26 @@
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-											<th>Position</th>
-                                            <th>ID</th>
-                                            <th>Name</th>
-											<th>Last search</th>
-
+											<th>Id</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+											<th>Phone</th>
+											<th>User Type</th>
+											<th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-					    <td>Edinburgh</td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>$170,750</td>
-                                        </tr>
+									<?php foreach ($list as $arr) {?>
+										<tr>
+											<td><?php echo $arr->id; ?></td>
+											<td><?php echo $arr->fname; ?></td>
+											<td><?php echo $arr->lname; ?></td>
+											<td><?php echo $arr->phone; ?></td>
+											<td><?php echo $arr->user_type; ?></td>
+											<td><?php echo $arr->status; ?></td>
+											<td></td>
+										</tr>
+									<?php } ?>
                                     </tbody>
                                 </table>
                             </div>

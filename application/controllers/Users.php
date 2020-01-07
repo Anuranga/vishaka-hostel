@@ -23,7 +23,8 @@ class Users extends CI_Controller {
 
 	public function usersView()
 	{
-		$this->load->view('tables-data-users');
+		$data['list'] = $this->users->getSystemUserList();
+		$this->load->view('system-users-list', $data);
 	}
 
 	public function login()
@@ -51,6 +52,7 @@ class Users extends CI_Controller {
 		$this->load->view('forms-security-approval');
 	}
 
+
 	public function addSystemUser()
 	{
 		$data = array(
@@ -70,7 +72,6 @@ class Users extends CI_Controller {
 			$this->response(array('status' => 'success'));
 		}*/
 	}
-
 	public function UserStatusChange()
 	{
 		$status = 1;
