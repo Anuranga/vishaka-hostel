@@ -9,7 +9,7 @@ class ExpensesModel extends CI_Model {
 
 	private $expenses = 'expenses';
 
-	function addexpenses($data)
+	function addExpenses($data)
 	{
 		$this->db->insert($this->expenses, $data);
 	}
@@ -21,7 +21,7 @@ class ExpensesModel extends CI_Model {
 		return $this->db->update($this->expenses, $data);
 	}
 
-	function getPaymentList()
+	function getExpensesList()
 	{
 		$query = $this->db->get($this->expenses);
 

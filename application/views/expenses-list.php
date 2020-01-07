@@ -22,37 +22,19 @@
                                         <tr>
 											<th>Date</th>
                                             <th>Expense category</th>
-											<th>Receipt NO</th>
+											<th>Description</th>
                                             <th>Amount</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>122</td>
-                                            <td>25</td>
-											<td>Going out</td>
-                                            <td>10:20 AM</td>
-                                        </tr>
-                                        <tr>
-											<td>12</td>
-											<td>36</td>
-											<td>Going out</td>
-											<td>11:45 AM</td>
-                                        </tr>
-                                        <tr>
-											<td>48</td>
-											<td>61</td>
-											<td>Sports out</td>
-											<td>2:20 pM</td>
-                                        </tr>
-                                        <tr>
-											<td>185</td>
-											<td>94</td>
-											<td>Other</td>
-											<td>09:35 AM</td>
-
-
-
+									<?php foreach ($list as $arr) {?>
+										<tr>
+											<td><?php echo $arr->date; ?></td>
+											<td><?php echo $arr->category; ?></td>
+											<td><?php echo $arr->description; ?></td>
+											<td><?php echo $arr->amount; ?></td>
+										</tr>
+									<?php } ?>
                                     </tbody>
                                 </table>
                             </div>

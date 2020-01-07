@@ -13,7 +13,7 @@ class DailyExpenses extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('StudentsModel', 'student');
+		$this->load->model('ExpensesModel', 'expenses');
 	}
 
 	public function index()
@@ -28,70 +28,26 @@ class DailyExpenses extends CI_Controller {
 
 	public function expensesList()
 	{
-		$this->load->view('expenses-list');
-	}
-
-	public function goingHome()
-	{
-		$this->load->view('forms-going-home');
-	}
-
-	public function dayOut()
-	{
-		$this->load->view('forms-day-out');
-	}
-
-	public function sportsOut()
-	{
-		$this->load->view('forms-sports-out');
-	}
-
-	public function otherOut()
-	{
-		$this->load->view('forms-other-out');
+		$data['list'] = $this->expenses->getExpensesList();
+		$this->load->view('expenses-list', $data);
 	}
 
 	public function addExpenses()
 	{
 		$data = array(
-			'fname' => $this->input->post("date"),
-			'lname' => $this->input->post("category"),
-			'phone' => $this->input->post("description"),
-			'password' => $this->input->post("amount"),
-			//'user_type' => $this->input->post("user-type"),
+			'date' => $this->input->post("date"),
+			'category' => $this->input->post("category"),
+			'description' => $this->input->post("description"),
+			'amount' => $this->input->post("amount")
 			//'status' => '0'
 		);
 
-		$result = $this->users->addSystemUser($data);
+		$result = $this->expenses->addExpenses($data);
 		echo "Success";
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {
 			$this->response(array('status' => 'success'));
-		}*/
-	}
-
-	public function StudentStatusChange()
-	{
-		$status = 2;
-		$result = $this->student->statusChange(4, $status);
-
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
-	}
-
-	public function GetStudentList()
-	{
-		$result = $this->student->getStudentList();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
 		}*/
 	}
 
