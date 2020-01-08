@@ -21,21 +21,24 @@
                                     <thead>
                                         <tr>
 											<th>Student ID</th>
-                                            <th>Visitor ID</th>
+                                            <th>Visitor Name</th>
+                                            <th>Visitor Mobile</th>
 											<th>Reason</th>
                                             <th>Out time</th>
                                             <th>In time</th>
+                                            <th>Approve</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 									<?php foreach ($list as $arr) {?>
 										<tr>
 											<td><?php echo $arr->sid; ?></td>
-											<td><?php echo $arr->vid; ?></td>
+											<td><?php echo $arr->full_name; ?></td>
+											<td><?php echo $arr->mobile; ?></td>
 											<td><?php echo $arr->reason; ?></td>
 											<td><?php echo $arr->out_time; ?></td>
 											<td><?php echo $arr->in_time; ?></td>
-											<td></td>
+											<td><button value="Approve" style="width: 100px"></button></td>
 										</tr>
 									<?php } ?>
                                     </tbody>

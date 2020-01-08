@@ -12,12 +12,7 @@ class Visitors extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('StudentsModel', 'student');
-	}
-
-	public function index()
-	{
-		$this->load->view('welcome_message');
+		$this->load->model('VisitorsModel', 'visitor');
 	}
 
 	public function visitorsRequest()
@@ -27,25 +22,24 @@ class Visitors extends CI_Controller {
 
 	public function visitorsList()
 	{
-		$this->load->view('visitors-list');
+		$data['list'] = $this->visitor->getVisitorsList();
+		$this->load->view('visitors-list', $data);
 	}
 
 	public function addVisitor()
 	{
-		$student_id = 1;
-		$description = 'Going Home';
-		$status = '0';
-
 		$data = array(
-			'student_id' => $student_id,
-			'relationship' => $description,
-			'status' => $status,
-			'created_at' => ''
+			'full_name' => $this->input->post("fullname"),
+			'address' => $this->input->post("address"),
+			'student_id' => $this->input->post("sid"),
+			'relationship' => $this->input->post("relationship"),
+			'status' => $this->input->post("status"),
+			'created_at' => date("D M d, Y G:i")
 
 		);
 
-		$result = $this->visitors->addVisitor($data);
-
+		$result = $this->visitor->addVisitor($data);
+		echo "Success";
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {

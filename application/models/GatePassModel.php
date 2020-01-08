@@ -23,7 +23,10 @@ class GatePassModel extends CI_Model {
 
 	function getGatepassList()
 	{
-		$query = $this->db->get($this->gatePass);
+		$this->db->select('*');
+		$this->db->from('gate_pass');
+		$this->db->join('visitors', 'visitors.id = gate_pass.vid');
+		$query = $this->db->get();
 
 		if ($query) {
 			return $query->result();

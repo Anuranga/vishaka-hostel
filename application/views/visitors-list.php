@@ -21,38 +21,22 @@
                                     <thead>
                                         <tr>
 											<th>Student ID</th>
-                                            <th>Visitor ID</th>
-											<th>In Time</th>
-                                            <th>Out Time</th>
+                                            <th>Visitor Name</th>
+											<th>Address</th>
+                                            <th>Mobile</th>
+                                            <th>Relationship</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>122</td>
-                                            <td>25</td>
-											<td>Going out</td>
-                                            <td>10:20 AM</td>
-                                        </tr>
-                                        <tr>
-											<td>12</td>
-											<td>36</td>
-											<td>Going out</td>
-											<td>11:45 AM</td>
-                                        </tr>
-                                        <tr>
-											<td>48</td>
-											<td>61</td>
-											<td>Sports out</td>
-											<td>2:20 pM</td>
-                                        </tr>
-                                        <tr>
-											<td>185</td>
-											<td>94</td>
-											<td>Other</td>
-											<td>09:35 AM</td>
-
-
-
+									<?php foreach ($list as $arr) {?>
+										<tr>
+											<td><?php echo $arr->student_id; ?></td>
+											<td><?php echo $arr->full_name; ?></td>
+											<td><?php echo $arr->address; ?></td>
+											<td><?php echo $arr->mobile; ?></td>
+											<td><?php echo $arr->relationship; ?></td>
+										</tr>
+									<?php } ?>
                                     </tbody>
                                 </table>
                             </div>

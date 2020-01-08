@@ -87,11 +87,9 @@
 			$.each(_$gatepass_form.serializeArray(), function(_, kv) {
 				var x = kv.value;
 				if (x == "" || x == 0) {
-					alert(x);
 					var id = kv.name+"Validation";
 					$("#"+id).show();
 					valid = false;
-					alert("invalid");
 				}else {
 					if(valid){
 						var id = kv.name+"Validation";
