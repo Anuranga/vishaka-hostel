@@ -1,4 +1,5 @@
 <?php  include_once ('header.php')?>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <body>
 <?php  include_once ('LeftPanel.php')?>
 
@@ -12,11 +13,22 @@
 			<div class="row">
 
 				<div class="col-lg-12">
+					
 					<div class="card">
+						
 						<div class="card-header">
 							<strong>Gate Pass Request Form</strong>
 						</div>
 						<div class="card-body card-block">
+							
+							<div class="alert alert-success" style="visibility: hidden">
+    								<strong>Success!</strong> This alert box could indicate a successful or positive action.
+  							</div>
+							
+							<div class="alert alert-danger">
+							    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+							  </div>
+							
 							<form id="gatepassform" class="form-horizontal">
 								<div class="row form-group">
 									<div class="col col-md-3"><label class="form-control-label">Student ID</label></div>
@@ -47,12 +59,10 @@
 										<small id="gradeValidation" style="display: none; color: red" class="help-block form-text">Please Select Grade</small>
 									</div>
 								</div>
-
 								<div class="row form-group">
 									<div class="col col-md-3"><label for="input-visitor-name" class=" form-control-label">Visitor name</label></div>
 									<div class="col-12 col-md-9"><input type="text" id="input-visitor-name" name="visitor-name" placeholder="Visitor name" class="form-control"><small class="help-block form-text"></small></div>
 								</div>
-
 							</form>
 						</div>
 						<div class="card-footer">
@@ -74,6 +84,9 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 <script>
@@ -109,12 +122,14 @@
 					success: function(response){
 						alert('success');
 						_$gatepass_form.trigger("reset");
+						$(".alert-success").css('visibility', 'visible');
 						console.log(response);
 						/*$("#message").html(response);
-                        $('#cartmessage').show();*/
+                                                  $('#cartmessage').show();*/
 					},
 					error: function(e) {
-						alert(e);
+						// alert(e); alert-danger
+						$(".alert-danger").css('visibility', 'visible');
 						console.log(e.status);
 					}
 				});
