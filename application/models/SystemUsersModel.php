@@ -30,4 +30,17 @@ class SystemUsersModel extends CI_Model {
 		}
 		return NULL;
 	}
+	
+	function getUserCount()
+	{
+		return $this->db->count_all($this->system_user);
+	}
+	
+	function getApprovedUserCount()
+	{
+		$this->db->get_where($this->system_user, array('status' => '1'));
+		$query = $this->db->get();
+		return $query->num_rows(); 
+	}
+
 }
