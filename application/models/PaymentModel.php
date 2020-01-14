@@ -30,4 +30,16 @@ class paymentModel extends CI_Model {
 		}
 		return NULL;
 	}
+	
+	function getPaymentRowCount()
+	{
+		return $this->db->count_all($this->payment);
+	}
+	
+	function getApprovedPaymentCount()
+	{
+		$this->db->get_where($this->gatePass, array('status' => '1'));
+		$query = $this->db->get();
+		return $query->num_rows(); 
+	}
 }

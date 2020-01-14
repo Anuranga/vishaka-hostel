@@ -33,4 +33,16 @@ class GatePassModel extends CI_Model {
 		}
 		return NULL;
 	}
+	
+	function getGatePassCount()
+	{
+		return $this->db->count_all($this->gatePass);
+	}
+	
+	function getApprovedGatePassCount()
+	{
+		$this->db->get_where($this->gatePass, array('status' => '1'));
+		$query = $this->db->get();
+		return $query->num_rows(); 
+	}
 }

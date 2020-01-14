@@ -58,6 +58,12 @@ class GatePass extends CI_Controller {
 			$this->response(array('status' => 'success'));
 		}*/
 	}
+	
+	public function gatePassCount()
+	{
+		$data['list'] = $this->gatepass->getGatepassCount();
+		$this->load->view('gate-pass-list', $data);
+	}
 
 }
 
