@@ -20,7 +20,8 @@
                             <form id="expenses_form" class="form-horizontal">
 								<div class="row form-group">
 									<div class="col col-md-3"><label class=" form-control-label">Date</label></div>
-									<div class="col-12 col-md-9"><input type="date" id="input-date" name="date" placeholder="Date" class="form-control"><small id="dateValidation" style="display: none; color: red" class="help-block form-text">Please Enter Date </small></div>
+									<div class="col-12 col-md-9">
+									<input type="text" id="datepicker" width="276" type="date" name="date" placeholder="Date" class="form-control"><small id="dateValidation" style="display: none; color: red" class="help-block form-text">Please Enter Date </small></div>
 								</div>
 								<div class="row form-group">
 									<div class="col col-md-3"><label class=" form-control-label">Expense Category</label></div>
@@ -54,22 +55,14 @@
 							<input type="reset" class="btn btn-danger btn-sm"></input>
 						</div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </div>
-
 <div class="clearfix"></div>
-
 <?php  include_once ('footer.php')?>
-
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
@@ -125,3 +118,12 @@
 		 });
 	 });
  </script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<script>
+	$('#datepicker').datepicker({
+		uiLibrary: 'bootstrap4'
+	});
+</script>

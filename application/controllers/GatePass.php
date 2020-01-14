@@ -46,11 +46,12 @@ class GatePass extends CI_Controller {
 		}*/
 	}
 
-	public function LeaveStatusChange()
+	public function gatePassStatusChange()
 	{
-		$status = 2;
-		$result = $this->leave->statusChange(2, $status);
-
+		$id = $this->input->post("id");
+		$status = $this->input->post("status");
+		$result = $this->gatepass->statusChange($id, $status);
+		echo $result;
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {

@@ -34,6 +34,7 @@ class Visitors extends CI_Controller {
 			'student_id' => $this->input->post("sid"),
 			'relationship' => $this->input->post("relationship"),
 			'status' => $this->input->post("status"),
+			'mobile' => $this->input->post("mobile"),
 			'created_at' => date("D M d, Y G:i")
 
 		);

@@ -29,15 +29,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-									<?php foreach ($list as $arr) {?>
+									<?php foreach ($list as $arr) {
+                                        $userType = ['Student', 'Admin', 'Warden', 'Principle', 'Security'];
+                                        ?>
 										<tr>
 											<td><?php echo $arr->id; ?></td>
 											<td><?php echo $arr->fname; ?></td>
 											<td><?php echo $arr->lname; ?></td>
 											<td><?php echo $arr->phone; ?></td>
-											<td><?php echo $arr->user_type; ?></td>
+											<td><?php echo $userType[$arr->user_type]; ?></td>
 											<td><?php echo $arr->status; ?></td>
-											<td></td>
 										</tr>
 									<?php } ?>
                                     </tbody>

@@ -45,27 +45,17 @@ class Payments extends CI_Controller {
 		echo "Success";
 	}
 
-	public function StudentStatusChange()
+	public function paymentStatusChange()
 	{
-		$status = 2;
-		$result = $this->student->statusChange(4, $status);
+		$status = 1;
+		$id = $this->input->post("id");
+
+		$result = $this->payment->statusChange($id, $status);
 
 		/*if ($result === FALSE) {
 			$this->response(array('status' => 'failed'));
 		} else {
 			$this->response(array('status' => 'success'));
-		}*/
-	}
-
-	public function GetStudentList()
-	{
-		$result = $this->student->getStudentList();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
 		}*/
 	}
 

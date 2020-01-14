@@ -26,12 +26,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-									<?php foreach ($list as $arr) {?>
+									<?php foreach ($list as $arr) 
+                                        $statusArr = ['Pending', 'Active', 'Rejected'];
+                                        {?>
 										<tr>
 											<td><?php echo $arr->id; ?></td>
 											<td><?php echo $arr->full_name; ?></td>
 											<td><?php echo $arr->grade; ?></td>
-											<td><?php echo $arr->status; ?></td>
+											<td><?php echo $statusArr[$arr->status]; ?></td>
 										</tr>
 									<?php } ?>
                                     </tbody>
@@ -64,14 +66,6 @@
     <script src="<?php echo base_url(); ?>assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/init/datatables-init.js"></script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#bootstrap-data-table-export').DataTable();
-      } );
-  </script>
-
-
+    <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
 </body>
 </html>

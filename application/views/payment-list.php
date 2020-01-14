@@ -24,6 +24,7 @@
                                             <th>Date of the Payment</th>
 											<th>Payment month</th>
                                             <th>Invoice NO</th>
+                                            <th>Approve</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,6 +34,18 @@
 											<td><?php echo $arr->date; ?></td>
 											<td><?php echo $arr->month; ?></td>
 											<td><?php echo $arr->invoice_no; ?></td>
+                                            <td>
+                                            <button onclick="update(<?php echo $arr->id; ?>)" style="
+                                            background-color: #4CAF50; /* Green */
+                                            border: none;
+                                            color: white;
+                                            padding: 15px 32px;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            font-size: 16px;" value="Approve" style="width: 100px" id="approveButton<?php echo $arr->sid; ?>">Approve
+                                            </button>
+                                            </td>
 										</tr>
 									<?php } ?>
                                     </tbody>
@@ -73,11 +86,27 @@
     <script src="<?php echo base_url(); ?>assets/js/init/datatables-init.js"></script>
 
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#bootstrap-data-table-export').DataTable();
-      } );
-  </script>
+    <script>
+        function update(id){
+                var objData = {};
+                objData['id'] = id;
+                objData['status'] = 1;
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo site_url('index.php/Payments/paymentStatusChange'); ?>",
+                        data: objData,
+                        success: function(response){
+                            alert('success');
+                            //_$gatepass_form.trigger("reset");
+                            console.log(response);
+                        },
+                        error: function(e) {
+                            alert(e);
+                            console.log(e.status);
+                        }
+                    });
+            }
+    </script>
 
 
 </body>
