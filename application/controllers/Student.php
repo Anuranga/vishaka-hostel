@@ -107,5 +107,28 @@ class Student extends CI_Controller {
 	{
 		$this->load->view('pending-student-list');
 	}
+	
+	public function GetStudentsNameAndId()
+	{
+		$result = $this->student->getStudentsNameAndId();
+		print_r($result);
 
+		/*if ($result) {
+			$this->response($result, 200);
+		} else {
+			$this->response(array(), 200);
+		}*/
+	}
+
+	public function GetStudentsCount()
+	{
+		$result = $this->student->getStudentsCount();
+		print_r($result);
+
+		/*if ($result) {
+			$this->response($result, 200);
+		} else {
+			$this->response(array(), 200);
+		}*/
+	}
 }
