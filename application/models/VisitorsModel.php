@@ -34,4 +34,17 @@ class VisitorsModel extends CI_Model {
 		}
 		return NULL;
 	}
+	
+	function getVisitorsCount()
+	{
+		return $this->db->count_all($this->visitors);
+	}
+	
+	function getActiveVisitorsCount()
+	{
+		$this->db->get_where($this->visitors, array('status' => '1'));
+		$query = $this->db->get();
+		return $query->num_rows(); 
+	}
+
 }
