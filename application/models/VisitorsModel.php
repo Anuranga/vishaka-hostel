@@ -9,8 +9,16 @@ class VisitorsModel extends CI_Model {
 
 	private $visitors = 'visitors';
 
-	function insertRequestStudent(){
-		echo('In the model');
+	function getVisitorsIdAndName(){
+		$this->db->select('id, name, date');
+		$this->db->from($this->visitors);
+		$this->db->where('status', '1');
+		$query = $this->db->get()
+			
+		if ($query) {
+			return $query->result();
+		}
+		return NULL;
 	}
 
 	function addVisitor($data)
