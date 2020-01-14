@@ -9,8 +9,16 @@ class StudentsModel extends CI_Model {
 
 	private $hostelStudents = 'hostel-student';
 
-	function insertRequestStudent(){
-		// echo('In the model');
+	function getStudentIdAndName(){
+		$this->db->select('id, name, status');
+		$this->db->from($this->hostelStudents);
+		$this->db->where('status', '1');
+		$query = $this->db->get()
+			
+		if ($query) {
+			return $query->result();
+		}
+		return NULL;
 	}
 
 	function addStudent($data)
