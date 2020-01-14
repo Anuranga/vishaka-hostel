@@ -71,4 +71,27 @@ class Visitors extends CI_Controller {
 		}*/
 	}
 
+	public function GetVisitorsNameAndId()
+	{
+		$result = $this->visitors->getVisitorsNameAndId();
+		print_r($result);
+
+		/*if ($result) {
+			$this->response($result, 200);
+		} else {
+			$this->response(array(), 200);
+		}*/
+	}
+	
+	public function GetVisitorsCount()
+	{
+		$result = $this->visitors->getVisitorsCount();
+		print_r($result);
+
+		/*if ($result) {
+			$this->response($result, 200);
+		} else {
+			$this->response(array(), 200);
+		}*/
+	}
 }
