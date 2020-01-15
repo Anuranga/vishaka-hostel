@@ -17,11 +17,29 @@
 							<strong>Payment Form</strong>
 						</div>
 						<div class="card-body card-block">
+
 							<form id="paymentform" class="form-horizontal">
+
+								<div class="alert alert-success" style="display: none">
+										<strong>Success!</strong> Successfully Saved.
+								</div>
+								
+								<div class="alert alert-danger" style="display: none">
+									<strong>Danger!</strong> Some Error Occured.
+								</div>
 
 								<div class="row form-group">
 									<div class="col col-md-3"><label class=" form-control-label">Student ID</label></div>
-									<div class="col-12 col-md-9"><input type="text" id="input-sid" name="sid" placeholder="Student ID" class="form-control"><small id="sidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Student Id</small></div>
+									<div class="col-12 col-md-9">
+							
+										<select id="input-sid" name="sid"  class="form-control">
+										<option value="0">Student Name</option>
+
+										<?php foreach ($students as $arr) {?>
+											<option value="<?php echo $arr->id; ?>"><?php echo $arr->full_name; ?></option>
+										<?php } ?>
+										</select>
+										<small id="sidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Student Id</small></div>
 								</div>
 								<div class="row form-group">
 									<div class="col col-md-3">
@@ -102,26 +120,25 @@
 				objData[kv.name] = kv.value;
 			});
 
-			console.log(objData);
 			if(valid){
 				$.ajax({
 					type: "POST",
 					url: "<?php echo site_url('index.php/payments/addPayment'); ?>",
 					data: objData,
 					success: function(response){
-						alert('success');
 						_$payment_form.trigger("reset");
-						console.log(response);
-						/*$("#message").html(response);
-                        $('#cartmessage').show();*/
+						$(".alert-danger").css('display', 'none');
+						$(".alert-success").css('display', 'block');
 					},
 					error: function(e) {
-						alert(e);
+						$(".alert-success").css('display', 'none');
+						$(".alert-danger").css('display', 'block');
 						console.log(e.status);
 					}
 				});
 			}else {
-				alert('Validation Failed');
+				$(".alert-success").css('display', 'none');
+				$(".alert-danger").css('display', 'block');
 			}
 		});
 	});

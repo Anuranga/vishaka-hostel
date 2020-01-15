@@ -10,7 +10,6 @@
         <div class="animated fadeIn">
 
             <div class="row">
-
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
@@ -18,6 +17,13 @@
                         </div>
                         <div class="card-body card-block">
                             <form id="expenses_form" class="form-horizontal">
+							<div class="alert alert-success" style="display: none">
+    								<strong>Success!</strong> Successfully Saved.
+  							</div>
+							
+							<div class="alert alert-danger" style="display: none">
+							    <strong>Danger!</strong> Some Error Occured.
+							</div>
 								<div class="row form-group">
 									<div class="col col-md-3"><label class=" form-control-label">Date</label></div>
 									<div class="col-12 col-md-9">
@@ -101,19 +107,19 @@
 					 url: "<?php echo site_url('index.php/dailyExpenses/addExpenses'); ?>",
 					 data: objData,
 					 success: function(response){
-						 alert('success');
 						 _$expenses_form.trigger("reset");
-						 console.log(response);
-						 /*$("#message").html(response);
-                         $('#cartmessage').show();*/
+						 $(".alert-danger").css('display', 'none');
+						 $(".alert-success").css('display', 'block');
 					 },
 					 error: function(e) {
-						 alert(e);
+						$(".alert-danger").css('display', 'block');
+						$(".alert-success").css('display', 'none');
 						 console.log(e.status);
 					 }
 				 });
 			 }else {
-				 alert('Validation Failed');
+				$(".alert-danger").css('display', 'block');
+				$(".alert-success").css('display', 'none');
 			 }
 		 });
 	 });

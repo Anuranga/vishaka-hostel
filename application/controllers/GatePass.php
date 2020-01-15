@@ -13,11 +13,16 @@ class GatePass extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('GatePassModel', 'gatepass');
+		$this->load->model('StudentsModel', 'student');
+		$this->load->model('VisitorsModel', 'visitor');
 	}
 
 	public function gatePass()
 	{
-		$this->load->view('forms-gate-pass');
+		$data['students'] = $this->student->getStudentsIdAndName();
+		$data['visitors'] = $this->visitor->getVisitorsIdAndName();
+	
+		$this->load->view('forms-gate-pass', $data);
 	}
 
 	public function gatePassList()

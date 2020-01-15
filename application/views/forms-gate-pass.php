@@ -21,22 +21,41 @@
 						</div>
 						<div class="card-body card-block">
 							
-							<div class="alert alert-success" style="visibility: hidden">
-    								<strong>Success!</strong> This alert box could indicate a successful or positive action.
+							<div class="alert alert-success" style="display: none">
+    								<strong>Success!</strong> Successfully Saved.
   							</div>
 							
-							<div class="alert alert-danger">
-							    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-							  </div>
+							<div class="alert alert-danger" style="display: none">
+							    <strong>Danger!</strong> Some Error Occured.
+							</div>
 							
 							<form id="gatepassform" class="form-horizontal">
 								<div class="row form-group">
 									<div class="col col-md-3"><label class="form-control-label">Student ID</label></div>
-									<div class="col-12 col-md-9"><input type="text" id="input-sid" name="sid" placeholder="Student Id" class="form-control"><small id="sidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Student Id</small></div>
+									<div class="col-12 col-md-9">
+								
+										<select id="input-sid" name="sid"  class="form-control">
+										<option value="0">Student Name</option>
+
+										<?php foreach ($students as $arr) {?>
+											<option value="<?php echo $arr->id; ?>"><?php echo $arr->full_name; ?></option>
+										<?php } ?>
+										</select>
+
+										<small id="sidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Student Id</small></div>
 								</div>
 								<div class="row form-group">
 									<div class="col col-md-3"><label class="form-control-label">Visitor ID</label></div>
-									<div class="col-12 col-md-9"><input type="text" id="input-vid" name="vid" placeholder="Visitor ID" class="form-control"><small id="vidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Visitor Id</small></div>
+									<div class="col-12 col-md-9">
+										
+										<select id="input-vid" name="vid" class="form-control">
+										<option value="0">Visitor Name</option>
+
+										<?php foreach ($visitors as $arr) {?>
+											<option value="<?php echo $arr->id; ?>"><?php echo $arr->full_name; ?></option>
+										<?php } ?>
+										</select>
+										<small id="vidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Visitor Id</small></div>
 								</div>
 								<div class="row form-group">
 									<div class="col col-md-3"><label for="input-outtime" class="form-control-label">Out Time</label></div>
@@ -59,10 +78,10 @@
 										<small id="gradeValidation" style="display: none; color: red" class="help-block form-text">Please Select Grade</small>
 									</div>
 								</div>
-								<div class="row form-group">
+								<!-- <div class="row form-group">
 									<div class="col col-md-3"><label for="input-visitor-name" class=" form-control-label">Visitor name</label></div>
 									<div class="col-12 col-md-9"><input type="text" id="input-visitor-name" name="visitor-name" placeholder="Visitor name" class="form-control"><small class="help-block form-text"></small></div>
-								</div>
+								</div> -->
 							</form>
 						</div>
 						<div class="card-footer">
@@ -120,21 +139,18 @@
 					url: "<?php echo site_url('index.php/GatePass/addGatePassRecord'); ?>",
 					data: objData,
 					success: function(response){
-						alert('success');
 						_$gatepass_form.trigger("reset");
-						$(".alert-success").css('visibility', 'visible');
-						console.log(response);
-						/*$("#message").html(response);
-                                                  $('#cartmessage').show();*/
+						$(".alert-danger").css('display', 'none');
+						$(".alert-success").css('display', 'block');
 					},
 					error: function(e) {
-						// alert(e); alert-danger
-						$(".alert-danger").css('visibility', 'visible');
-						console.log(e.status);
+						$(".alert-danger").css('display', 'block');
+						$(".alert-success").css('display', 'none');
 					}
 				});
 			}else {
-				alert('Validation Failed');
+				$(".alert-danger").css('display', 'block');
+				$(".alert-success").css('display', 'none');
 			}
 		});
 	});

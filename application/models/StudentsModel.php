@@ -36,6 +36,13 @@ class StudentsModel extends CI_Model {
 		return $this->db->count_all($this->hostelStudents);
 	}
 	
+	function getStudentsIdAndName()
+	{
+		$this->db->select('id, full_name');
+		$query = $this->db->get($this->hostelStudents);
+		return $query->result();
+	}
+
 	function getApprovedStudentsCount()
 	{
 		$this->db->get_where($this->hostelStudents, array('status' => '1'));

@@ -13,11 +13,13 @@ class Visitors extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('VisitorsModel', 'visitor');
+		$this->load->model('StudentsModel', 'student');
 	}
 
 	public function visitorsRequest()
 	{
-		$this->load->view('forms-visitors-request');
+		$data['students'] = $this->student->getStudentsIdAndName();
+		$this->load->view('forms-visitors-request', $data);
 	}
 
 	public function visitorsList()
@@ -41,58 +43,26 @@ class Visitors extends CI_Controller {
 
 		$result = $this->visitor->addVisitor($data);
 		echo "Success";
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
 	}
 
 	public function VisitorStatusChange()
 	{
 		$status = 2;
-		$result = $this->visitors->statusChange(2, $status);
-
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
+		return  $this->visitors->statusChange(2, $status);
 	}
 
 	public function GetVisitorsList()
 	{
-		$result = $this->visitors->getVisitorsList();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
+		return $this->visitors->getVisitorsList();
 	}
 
 	public function GetVisitorsNameAndId()
 	{
-		$result = $this->visitors->getVisitorsNameAndId();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
+		return $this->visitors->getVisitorsNameAndId();
 	}
 	
 	public function getVisitorsCount()
 	{
-		$result = $this->visitors->getVisitorsCount();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
+		return $this->visitors->getVisitorsCount();
 	}
 }

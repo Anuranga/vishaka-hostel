@@ -17,6 +17,13 @@
 
                             <div class="card-body card-block">
                                 <form id="systemuserform" class="form-horizontal">
+									<div class="alert alert-success" style="display: none">
+										<strong>Success!</strong> Successfully Saved.
+									</div>
+									
+									<div class="alert alert-danger" style="display: none">
+										<strong>Danger!</strong> Some Error Occured.
+									</div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-fname" class=" form-control-label">First name</label></div>
                                         <div class="col-12 col-md-9"><input type="text" id="input-fname" name="fname" placeholder="First name" class="form-control"><small id="fnameValidation" style="display: none; color: red" class="help-block form-text">Please Enter First Name</small></div>
@@ -120,19 +127,19 @@
 					url: "<?php echo site_url('index.php/users/addSystemUser'); ?>",
 					data: objData,
 					success: function(response){
-						alert('success');
 						_$systemuser_form.trigger("reset");
-						console.log(response);
-						/*$("#message").html(response);
-                        $('#cartmessage').show();*/
+						$(".alert-danger").css('display', 'none');
+						 $(".alert-success").css('display', 'block');
 					},
 					error: function(e) {
-						alert(e);
+						$(".alert-danger").css('display', 'block');
+						$(".alert-success").css('display', 'none');
 						console.log(e.status);
 					}
 				});
 			}else {
-				alert('Validation Failed');
+				$(".alert-danger").css('display', 'block');
+				$(".alert-success").css('display', 'none');
 			}
 		});
 	});

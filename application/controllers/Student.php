@@ -28,7 +28,6 @@ class Student extends CI_Controller {
 
 	public function allStudentList()
 	{
-		$data['list'] = $this->student->getStudentList();
 		$this->load->view('all-student-list', $data);
 	}
 
@@ -95,12 +94,6 @@ class Student extends CI_Controller {
 	{
 		$status = 2;
 		$result = $this->student->statusChange(4, $status);
-
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
 	}
 
 	public function GetStudentList()
@@ -108,27 +101,15 @@ class Student extends CI_Controller {
 		$this->load->view('pending-student-list');
 	}
 	
-	public function GetStudentsNameAndId()
+	public function getStudentsNameAndId()
 	{
-		$result = $this->student->getStudentsNameAndId();
-		print_r($result);
+		return $this->student->getStudentsNameAndId();
 
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
 	}
 
 	public function GetStudentsCount()
 	{
-		$result = $this->student->getStudentsCount();
-		print_r($result);
-
-		/*if ($result) {
-			$this->response($result, 200);
-		} else {
-			$this->response(array(), 200);
-		}*/
+		return $this->student->getStudentsCount();
+		
 	}
 }

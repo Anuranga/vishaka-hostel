@@ -9,10 +9,6 @@ class LogModel extends CI_Model {
 
 	private $studentlog = 'student_log';
 
-	function insertRequestStudent(){
-		echo('In the model');
-	}
-
 	function addLog($data)
 	{
 		return	$this->db->insert($this->studentlog, $data);

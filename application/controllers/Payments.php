@@ -14,6 +14,7 @@ class Payments extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('PaymentModel', 'payment');
+		$this->load->model('StudentsModel', 'student');
 	}
 
 	public function index()
@@ -23,7 +24,8 @@ class Payments extends CI_Controller {
 
 	public function newPayment()
 	{
-		$this->load->view('forms-new-payment');
+		$data['students'] = $this->student->getStudentsIdAndName();
+		$this->load->view('forms-new-payment', $data);
 	}
 
 	public function paymentList()
@@ -51,12 +53,7 @@ class Payments extends CI_Controller {
 		$id = $this->input->post("id");
 
 		$result = $this->payment->statusChange($id, $status);
-
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
+		
 	}
 
 }
