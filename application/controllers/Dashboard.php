@@ -15,8 +15,8 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$data['gatePass'] = $this->gatePassCount();
-		$data['student'] = $this->GetStudentsCount();
-		$data['visitors'] = $this->GetVisitorsCount();
+		$data['student'] = $this->getStudentsCount();
+		$data['visitors'] = $this->getVisitorsCount();
 		
 		$this->load->view('dashboard', $data);
 	}
@@ -26,14 +26,14 @@ class Dashboard extends CI_Controller {
 		return $this->gatepass->getGatepassList();
 	}
 	
-	public function GetStudentsCount()
+	public function getStudentsCount()
 	{
 		return $this->student->getStudentsCount();
 	}
 	
-	public function GetVisitorsCount()
+	public function getVisitorsCount()
 	{
-		return $this->visitors->getVisitorsCount();
+		return $this->visitor->getVisitorsCount();
 	}
 	
 }

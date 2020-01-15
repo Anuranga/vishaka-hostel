@@ -84,7 +84,7 @@ class Visitors extends CI_Controller {
 		}*/
 	}
 	
-	public function GetVisitorsCount()
+	public function getVisitorsCount()
 	{
 		$result = $this->visitors->getVisitorsCount();
 		print_r($result);

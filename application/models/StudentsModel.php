@@ -31,12 +31,12 @@ class StudentsModel extends CI_Model {
 		return NULL;
 	}
 	
-	function getGatePassCount()
+	function getStudentsCount()
 	{
 		return $this->db->count_all($this->hostelStudents);
 	}
 	
-	function getApprovedGatePassCount()
+	function getApprovedStudentsCount()
 	{
 		$this->db->get_where($this->hostelStudents, array('status' => '1'));
 		$query = $this->db->get();
