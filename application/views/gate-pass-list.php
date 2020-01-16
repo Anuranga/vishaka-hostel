@@ -20,9 +20,9 @@
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-											<th>Student ID</th>
-                                            <th>Visitor Name</th>
-                                            <th>Visitor Mobile</th>
+											<th>ID</th>
+                                            <th>Name</th>
+                                            <th>Mobile</th>
 											<th>Reason</th>
                                             <th>Out time</th>
                                             <th>In time</th>
@@ -43,16 +43,10 @@
 											<td><?php echo $arr->in_time; ?></td>
                                             <td><?php echo $statusArr[$arr->status]; ?></td>
 											<td>
-                                            <button onclick="update(<?php echo $arr->id; ?>)" style="
-                                            background-color: #4CAF50; /* Green */
-                                            border: none;
-                                            color: white;
-                                            padding: 15px 32px;
-                                            text-align: center;
-                                            text-decoration: none;
-                                            display: inline-block;
-                                            font-size: 16px;" value="Approve" style="width: 100px" id="approveButton<?php echo $arr->sid; ?>">Approve
-                                            </button>
+                                            <select id="input-sid" name="sid"  class="form-control">
+										        <option value="1">Approve</option>
+                                                <option value="2">Reject</option>
+										    </select>
                                             </td>
 										</tr>
 									<?php } ?>

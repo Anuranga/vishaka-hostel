@@ -31,7 +31,7 @@
 							
 							<form id="gatepassform" class="form-horizontal">
 								<div class="row form-group">
-									<div class="col col-md-3"><label class="form-control-label">Student ID</label></div>
+									<div class="col col-md-3"><label class="form-control-label">Student Name</label></div>
 									<div class="col-12 col-md-9">
 								
 										<select id="input-sid" name="sid"  class="form-control">
@@ -45,7 +45,7 @@
 										<small id="sidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Student Id</small></div>
 								</div>
 								<div class="row form-group">
-									<div class="col col-md-3"><label class="form-control-label">Visitor ID</label></div>
+									<div class="col col-md-3"><label class="form-control-label">Visitor Name</label></div>
 									<div class="col-12 col-md-9">
 										
 										<select id="input-vid" name="vid" class="form-control">

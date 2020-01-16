@@ -23,6 +23,7 @@ class StudentsModel extends CI_Model {
 
 	function getStudentList()
 	{
+		$this->db->select('*');
 		$query = $this->db->get($this->hostelStudents);
 
 		if ($query) {
