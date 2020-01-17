@@ -33,6 +33,7 @@ class GatePass extends CI_Controller {
 
 	public function addGatePassRecord()
 	{
+		
 		$data = array(
 			'sid' => $this->input->post("sid"),
 			'vid' => $this->input->post("vid"),

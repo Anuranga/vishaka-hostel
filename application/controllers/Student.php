@@ -44,45 +44,51 @@ class Student extends CI_Controller {
 
 	public function registerStudent()
 	{
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
+		// $this->load->helper(array('form', 'url'));
+		// $this->load->library('form_validation');
 
-		$this->form_validation->set_rules('fullName', "Full Name", 'required');
-		$this->form_validation->set_rules('nameInitials', "Name Initials", 'required');
-		$this->form_validation->set_rules('birthDate', "Birth Day", 'required');
+		// $this->form_validation->set_rules('fullName', "Full Name", 'required');
+		// $this->form_validation->set_rules('namewithitials', "Name with Initials", 'required');
+		// $this->form_validation->set_rules('dateofbirth', "Date of Birth", 'required');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('forms-admission');
-		} else {
-			$full_name = $this->input->post("fullName");
+		// if ($this->form_validation->run() == FALSE) {
+		// 	$this->load->view('forms-admission');
+		// } else {
+			$fullName = $this->input->post("fullName");
+			$nameInitials = $this->input->post("nameInitials");
 			$dob = $this->input->post("birthDate");
 			$address = $this->input->post("address");
-			$contact_number = $this->input->post("contact");
+			$contactNumber = $this->input->post("contact");
 			$grade = $this->input->post("grade");
+			$admissonNumber = $this->input->post('admissonNumber');
+			$house = $this->input->post('house');
 			$status = '0';
 
 			$data = array(
-				'full_name' => $full_name,
+				'full_name' => $fullName,
+				'name_with_initials' => $nameInitials,
 				'dob' => $dob,
 				'address' => $address,
-				'contact_number' => $contact_number,
+				'contact_number' => $contactNumber,
 				'grade' => $grade,
+				'sch_admission_number' => $admissonNumber,
+				'house' => $house,
 				'status' => $status,
 			);
-
+			
 			$result = $this->student->addStudent($data);
-
 			echo "Success";
-		}
+		//}
 	}
 
-	public function StudentStatusChange()
+	public function studentStatusChange()
 	{
-		$status = 2;
-		$result = $this->student->statusChange(4, $status);
+		$sid = $this->input->post("sid");
+		$status = $this->input->post("status");
+		$result = $this->student->statusChange($sid, $status);
 	}
 
-	public function GetStudentList()
+	public function getStudentList()
 	{
 		$this->load->view('pending-student-list');
 	}

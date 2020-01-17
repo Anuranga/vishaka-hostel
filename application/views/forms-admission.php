@@ -4,16 +4,23 @@
 		display: none;
 		color: red
 	}
+
+    /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
 </style>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-    $( function() {
-        $( "#birthDate" ).datepicker();
-    } );
-</script>
 <body>
 <?php  include_once ('LeftPanel.php')?>
     <div id="right-panel" class="right-panel">
@@ -30,6 +37,13 @@
                             </div>
                             <div class="card-body card-block">
                                 <form method="post" id="admission-form"  class="form-horizontal">
+                                <div class="alert alert-success" style="display: none">
+    								<strong>Success!</strong> Successfully Saved.
+                                </div>
+                                
+                                <div class="alert alert-danger" style="display: none">
+                                    <strong>Danger!</strong> Some Error Occured.
+                                </div>
                                     <div class="row form-group">
                                     <strong class="header-menu">Personal Information </strong>
                                     </div>
@@ -46,25 +60,24 @@
                                         <div class="col-12 col-md-9"><input type="date"  id="birthDate" name="birthDate"  required class="form-control"><small id="birthDateValidation" style="display: none; color: red" class="help-block form-text">Please Select Date of Bith</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="password-input" class=" form-control-label">Address</label></div>
+                                        <div class="col col-md-3"><label for="address-input" class=" form-control-label">Address</label></div>
                                         <div class="col-12 col-md-9"><input type="text" id="address" required name="address" placeholder="Address" class="form-control"><small id="addressValidation" style="display: none; color: red" class="help-block form-text">Please Enter Address</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-contact" class=" form-control-label">Contact numbers</label></div>
-                                        <div class="col-12 col-md-9"><input type="phone" id="contact" required  max="10" min="10"name="contact" placeholder="Contact numbers" class="form-control"><small id="contactValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid Contact number</small></div>
+                                        <div class="col-12 col-md-9"><input type="number" id="contactStudent" required  max="10" min="10"name="contactStudent" placeholder="Contact Number" class="form-control"><small id="contactStudentValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid Contact number</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <strong class="header-menu">Educational Information </strong>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-admission" class=" form-control-label">School Admission number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="admission"  required name="admissonNumber" placeholder="School Admission number" class="form-control"><small id="admissionNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter School Admission number</small></div>
+                                        <div class="col-12 col-md-9"><input type="number" id="admissonNumber"  required name="admissonNumber" placeholder="School Admission number" class="form-control"><small id="admissionNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter School Admission number</small></div>
                                     </div>
-
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="select" class=" form-control-label">Grade</label></div>
                                         <div class="col-12 col-md-9">
-                                            <select name="grade" id="grade"  class="form-control">
+                                            <select name="grade" id="grade" class="form-control">
                                                 <option value="0">Select Grade</option>
                                                 <option value="6">6</option>
                                                 <option value="7">7</option>
@@ -82,9 +95,9 @@
                                         <div class="col-12 col-md-9">
                                             <select name="house" id="house" class="form-control">
                                                 <option value="0">Select House</option>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
+                                                <option value="1">House 01</option>
+                                                <option value="2">House 02</option>
+                                                <option value="3">House 03</option>
                                             </select>
 											<small id="houseValidation" style="display: none; color: red" class="help-block form-text">Please Select House</small>
                                         </div>
@@ -97,8 +110,8 @@
                                         <div class="col-12 col-md-9"><input type="text" id="visitorName" required  name="visitorName" placeholder="Visitor name" class="form-control"><small id="visitorNameValidation" style="display: none; color: red" class="help-block form-text">Please Enter Visitor name</small></div>
                                     </div>
 									<div class="row form-group">
-										<div class="col col-md-3"><label for="input-contact" class=" form-control-label">NIC/Passport</label></div>
-										<div class="col-12 col-md-9"><input type="phone" id="contact" required  max="10" min="10"name="contact" placeholder="NIC/Passport" class="form-control"><small id="contactValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid NIC/Passport</small></div>
+										<div class="col col-md-3"><label for="input-nic" class=" form-control-label">NIC/Passport</label></div>
+										<div class="col-12 col-md-9"><input type="text" id="nic" required  max="10" min="10"name="nic" placeholder="NIC/Passport" class="form-control"><small id="nicValidation" style="display: none; color: red" class="help-block form-text">Please Enter Valid NIC/Passport</small></div>
 									</div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-visitor-relationship" class=" form-control-label">Relationship with student</label></div>
@@ -106,7 +119,7 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-visitor-contact-number" class=" form-control-label">Contact number</label></div>
-                                        <div class="col-12 col-md-9"><input type="phone" id="visitorContactNumber" required name="visitorContactNumber" placeholder="Visitor Contact number" class="form-control"><small id="visitorContactNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter Contact number</small></div>
+                                        <div class="col-12 col-md-9"><input type="number" id="visitorContactNumber" required name="visitorContactNumber" placeholder="Visitor Contact number" class="form-control"><small id="visitorContactNumberValidation" style="display: none; color: red" class="help-block form-text">Please Enter Contact number</small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="input-visitor-contact-occupation" class=" form-control-label">Occupation</label></div>
@@ -136,15 +149,12 @@
 
 </div>
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 </body>
 </html>
 <script>
@@ -164,27 +174,25 @@
                     valid = false;
 
                 }else {
-                    var contactNumberValidation = $('#contact').val().length;
-
+                    var contactNumberValidation = $('#contactStudentValidation').val().length;
                     if(contactNumberValidation != 10){
-                        $("#contactValidation").show();
+                        $("#contactStudentValidation").show();
                         valid = false;
                     }else{
+                        $("#contactStudentValidation").hide();
                         valid = true;
                     }
 
                     var visitorContactNumberValidation = $('#visitorContactNumber').val().length;
-
                     if(visitorContactNumberValidation != 10){
                         $("#visitorContactNumberValidation").show();
                         valid = false;
                     }else{
+                        $("#visitorContactNumberValidation").hide();
                         valid = true;
                     }
 
                     if(valid){
-
-
                         var id = kv.name+"Validation";
                         $("#"+id).hide();
                         valid = true;
@@ -197,22 +205,22 @@
             if(valid){
                 $.ajax({
                     type: "POST",
-                    url: "<?php echo site_url('index.php/student/RegisterStudent'); ?>",
+                    url: "<?php echo site_url('index.php/student/registerStudent'); ?>",
                     data: objData,
                     success: function(response){
-                        alert('success');
                         _$admission_form.trigger("reset");
-                        console.log(response.status);
-                        /*$("#message").html(response);
-						$('#cartmessage').show();*/
+                        $(".alert-danger").css('display', 'none');
+						$(".alert-success").css('display', 'block');
                     },
                     error: function(e) {
-                        alert(e);
+                        $(".alert-danger").css('display', 'block');
+						$(".alert-success").css('display', 'none');
                         console.log(e.status);
                     }
                 });
             }else {
-                alert('Validation Failed');
+                $(".alert-danger").css('display', 'block');
+				$(".alert-success").css('display', 'none');
             }
         }
     );
