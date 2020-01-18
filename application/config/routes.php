@@ -56,3 +56,4 @@ $route['leave'] = 'leave';
 $route['visitors'] = 'visitors';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['mypdf'] = "visitors/visitorspdf";
