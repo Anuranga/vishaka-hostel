@@ -31,7 +31,7 @@
 							
 							<form id="gatepassform" class="form-horizontal">
 								<div class="row form-group">
-									<div class="col col-md-3"><label class="form-control-label">Student ID</label></div>
+									<div class="col col-md-3"><label class="form-control-label">Student Name</label></div>
 									<div class="col-12 col-md-9">
 								
 										<select id="input-sid" name="sid"  class="form-control">
@@ -45,7 +45,7 @@
 										<small id="sidValidation" style="display: none; color: red" class="help-block form-text">Please Enter Student Id</small></div>
 								</div>
 								<div class="row form-group">
-									<div class="col col-md-3"><label class="form-control-label">Visitor ID</label></div>
+									<div class="col col-md-3"><label class="form-control-label">Visitor Name</label></div>
 									<div class="col-12 col-md-9">
 										
 										<select id="input-vid" name="vid" class="form-control">
@@ -103,9 +103,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 <script>

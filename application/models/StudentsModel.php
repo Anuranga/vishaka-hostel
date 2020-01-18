@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 26/4/2019
- * Time: 8:30 PM
- */
+
 class StudentsModel extends CI_Model {
 
 	private $hostelStudents = 'hostel-student';
@@ -17,12 +12,16 @@ class StudentsModel extends CI_Model {
 	function statusChange($id, $status)
 	{
 		$data = array('status' => $status);
+		$this->db->set('status', $status);
 		$this->db->where('id', $id);
-		return $this->db->update($this->hostelStudents, $data);
+		$result = $this->db->update($this->hostelStudents, $data);
+
+		print_r($result); exit;
 	}
 
 	function getStudentList()
 	{
+		$this->db->select('*');
 		$query = $this->db->get($this->hostelStudents);
 
 		if ($query) {
