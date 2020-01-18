@@ -104,4 +104,13 @@ class Student extends CI_Controller {
 		return $this->student->getStudentsCount();
 		
 	}
+
+    function pdf_gen_all_student(){
+        $this->load->library('pdfgenerator');
+
+        $data['list'] = $this->student->getStudentList();
+        $html = $this->load->view('all-student-pdf', $data, true);
+
+        $this->pdfgenerator->generate($html);
+    }
 }

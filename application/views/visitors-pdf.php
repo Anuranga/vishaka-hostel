@@ -3,12 +3,12 @@
         th {
             background-color: rgba(255,200,118,0.95);
             border: 1px solid #D0D0D0;
-            margin: 5px;
+            padding: 5px;
         }
         td {
             background-color: #f9f9f9;
             border: 1px solid #D0D0D0;
-            margin: 5px;
+            padding: 5px;
         }
     </style>
 </head><body>

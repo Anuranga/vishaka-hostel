@@ -70,7 +70,7 @@ class Visitors extends CI_Controller {
         $this->load->library('pdfgenerator');
 
         $data['list'] = $this->visitor->getVisitorsList();
-        $html = $this->load->view('visitorspdf', $data, true);
+        $html = $this->load->view('visitors-pdf', $data, true);
 
         $this->pdfgenerator->generate($html);
     }

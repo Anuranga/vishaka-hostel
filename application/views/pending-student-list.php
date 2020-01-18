@@ -14,6 +14,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Pending student list</strong>
+                                <div class="pull-right">
+                                    <a class="color-red" href="<?php echo base_url(); ?>index.php/admission/pdf_gen">Save as PDF</a>
+                                </div>
                             </div>
                             <div class="alert alert-success" style="display: none">
     								<strong>Success!</strong> Successfully Saved.

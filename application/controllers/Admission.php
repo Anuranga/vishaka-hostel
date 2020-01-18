@@ -26,4 +26,13 @@ class Admission extends CI_Controller {
 		$data['list'] = $this->student->getStudentList();
 		$this->load->view('pending-student-list', $data);
 	}
+
+    function pdf_gen(){
+        $this->load->library('pdfgenerator');
+
+        $data['list'] = $this->student->getStudentList();
+        $html = $this->load->view('pending-student-pdf', $data, true);
+
+        $this->pdfgenerator->generate($html);
+    }
 }

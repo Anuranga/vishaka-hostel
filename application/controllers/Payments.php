@@ -56,4 +56,16 @@ class Payments extends CI_Controller {
 		
 	}
 
+	function pdf_gen_payments(){
+
+    $this->load->library('pdfgenerator');
+
+    $data['list'] = $this->payment->getPaymentList();
+    $html = $this->load->view('payment-pdf', $data, true);
+
+    $this->pdfgenerator->generate($html);
+}
+
+
+
 }

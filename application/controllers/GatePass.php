@@ -71,6 +71,15 @@ class GatePass extends CI_Controller {
 		$this->load->view('gate-pass-list', $data);
 	}
 
+    function pdf_gen(){
+        $this->load->library('pdfgenerator');
+
+        $data['list'] = $this->gatepass->getGatepassList();
+        $html = $this->load->view('gate-pass-pdf', $data, true);
+
+        $this->pdfgenerator->generate($html);
+    }
+
 }
 
 

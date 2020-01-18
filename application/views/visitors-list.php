@@ -16,7 +16,7 @@
                             <div class="card-header">
                                 <strong class="card-title">Visitors list</strong>
                                 <div class="pull-right">
-                                    <a href="<?php echo base_url(); ?>index.php/visitors/pdf_gen">Save as PDF</a>
+                                    <a class="color-red" href="<?php echo base_url(); ?>index.php/visitors/pdf_gen">Save as PDF</a>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -84,11 +84,6 @@
         $(document).ready(function() {
           $('#bootstrap-data-table-export').DataTable();
         } );
-
-        function print_visitors_list(url) {
-             popupWindow = window.open(
-                 url,'popUpWindow','left=10,top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=no')
-        }
     </script>
 
 

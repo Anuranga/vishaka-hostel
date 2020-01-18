@@ -31,7 +31,9 @@ class GatePassModel extends CI_Model {
 		if ($query) {
 			return $query->result();
 		}
+
 		return NULL;
+
 	}
 	
 	function getGatePassCount()
