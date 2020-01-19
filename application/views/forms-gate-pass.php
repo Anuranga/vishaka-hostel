@@ -69,11 +69,11 @@
 									<div class="col col-md-3"><label for="select" class=" form-control-label">Reason</label></div>
 									<div class="col-12 col-md-9">
 										<select name="reason" id="reason" class="form-control">
-											<option value="0">Please Enter Reason</option>
-											<option value="6">Going Home</option>
-											<option value="7">Going Out</option>
-											<option value="8">Sports Out</option>
-											<option value="9">Other</option>
+											<option>Please Enter Reason</option>
+											<option value="1">Going Home</option>
+											<option value="2">Going Out</option>
+											<option value="3">Sports Out</option>
+											<option value="0">Other</option>
 										</select>
 										<small id="gradeValidation" style="display: none; color: red" class="help-block form-text">Please Select Grade</small>
 									</div>

@@ -33,7 +33,6 @@ class GatePass extends CI_Controller {
 
 	public function addGatePassRecord()
 	{
-		
 		$data = array(
 			'sid' => $this->input->post("sid"),
 			'vid' => $this->input->post("vid"),
@@ -42,27 +41,14 @@ class GatePass extends CI_Controller {
 			'reason' => $this->input->post("reason")
 		);
 
-		$result = $this->gatepass->addGatePass($data);
-
-		echo "Success";
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
+		return $this->gatepass->addGatePass($data);
 	}
 
 	public function gatePassStatusChange()
 	{
 		$id = $this->input->post("id");
 		$status = $this->input->post("status");
-		$result = $this->gatepass->statusChange($id, $status);
-		echo $result;
-		/*if ($result === FALSE) {
-			$this->response(array('status' => 'failed'));
-		} else {
-			$this->response(array('status' => 'success'));
-		}*/
+		return $this->gatepass->statusChange($id, $status);
 	}
 	
 	public function gatePassCount()
