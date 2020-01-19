@@ -43,4 +43,18 @@ class SystemUsersModel extends CI_Model {
 		return $query->num_rows(); 
 	}
 
+	function validateLogin($data)
+	{
+		$this->db->select('title, content, date');
+		$this->db->from('mytable');
+		$this->db->where('email', 'jayan@gmail.com');
+		$this->db->where('password', '123456');
+		$this->db->where('status', 1);
+		$query = $this->db->get();
+
+		if ($query) {
+			return $query->result();
+		}
+	}
+
 }

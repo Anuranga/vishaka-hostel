@@ -96,4 +96,15 @@ class Users extends CI_Controller {
 		}*/
 	}
 
+	public function validateLogin()
+	{
+		// $data = array(
+		// 	'fname' => $this->input->post("fname"),
+		// 	'email' => $this->input->post("email"),
+		// 	'status' => '1'
+		// );
+		$data = [];
+		print_r('Login');exit;
+		return $this->users->validateLogin($data);
+	}
 }

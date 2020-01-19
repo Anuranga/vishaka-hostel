@@ -30,7 +30,6 @@
                                     </thead>
                                     <tbody>
                                     <?php foreach ($list as $arr) 
-                                        
                                         $statusArr = ['Pending', 'Active', 'Rejected'];
                                         {?>
 										<tr>
