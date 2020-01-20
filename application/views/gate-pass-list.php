@@ -35,26 +35,29 @@
                                     </thead>
                                     <tbody>
 									<?php foreach ($list as $arr) {
-                                        $statusArr = ['Pending', 'Active', 'Rejected'];
+                                        $statusArr = ['Pending', 'Approved', 'Rejected'];
+                                        $reasonArr = ['Other', 'Going Home', 'Going Out', 'Sports Out'];
                                         ?>
 										<tr id=<?php echo $arr->id; ?>>
-											<td><?php echo $arr->sid; ?></td>
+											<td><?php echo $arr->id; ?></td>
 											<td><?php echo $arr->full_name; ?></td>
 											<td><?php echo $arr->mobile; ?></td>
-											<td><?php echo $arr->reason; ?></td>
+											<td><?php echo $reasonArr[$arr->reason]; ?></td>
 											<td><?php echo $arr->out_time; ?></td>
 											<td><?php echo $arr->in_time; ?></td>
-                                            <td><?php echo $statusArr[$arr->status]; ?></td>
+                                            <td id="demo<?php echo $arr->id; ?>"><?php echo $statusArr[$arr->status]; ?></td>
 											<td>
-                                            <select id="input-sid" name="sid"  class="form-control">
-										        <option value="1">Approve</option>
-                                                <option value="2">Reject</option>
+                                            <select onchange="statusChange(this, <?php echo $arr->id; ?>)" id="input-sid" name="sid"  class="form-control">
+										        <option <?php if($arr->status == 1){ echo "selected"; } ?>  value="1">Approve</option>
+                                                <option <?php if($arr->status == 2){ echo "selected"; } ?>  value="2">Reject</option>
+                                                <option <?php if($arr->status == 0){ echo "selected"; } ?>  value="0">Pending</option>
 										    </select>
                                             </td>
 										</tr>
 									<?php } ?>
                                     </tbody>
                                 </table>
+                                <p ></p>
                             </div>
                         </div>
                     </div>
@@ -79,26 +82,33 @@
     <script src="<?php echo base_url(); ?>assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/init/datatables-init.js"></script>
+    
     <script>
-        function update(id){
-                var objData = {};
-                objData['id'] = id;
-                objData['status'] = 1;
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo site_url('index.php/GatePass/gatePassStatusChange'); ?>",
-                        data: objData,
-                        success: function(response){
-                            alert('success');
-                            //_$gatepass_form.trigger("reset");
-                            console.log(response);
-                        },
-                        error: function(e) {
-                            alert(e);
-                            console.log(e.status);
-                        }
-                    });
-            }
-    </script>
+        function statusChange(a, b){
+            var objData = {};
+            objData['status'] = a.value;
+            objData['id'] = b;
+            $(".alert-danger").css('display', 'none');
+            $(".alert-success").css('display', 'none');
+            var statusArray = ['Pending', 'Approved', 'Rejected'];
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('index.php/gatepass/gatePassStatusChange'); ?>",
+                data: objData,
+                success: function(response){
+                    alert("Success ......!");
+                    document.getElementById("demo"+b).innerHTML = statusArray[a.value];
+                    $(".alert-danger").css('display', 'none');
+                    $(".alert-success").css('display', 'block');
+                },
+                error: function(e) {
+                    alert("Some Error Occured..!");
+                    $(".alert-danger").css('display', 'block');
+                    $(".alert-success").css('display', 'none');
+                    console.log(e.status);
+                }
+            });
+        }
+</script>
 </body>
 </html>
