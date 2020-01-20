@@ -104,7 +104,12 @@ class Users extends CI_Controller {
 		// 	'status' => '1'
 		// );
 		$data = [];
-		print_r('Login');exit;
-		return $this->users->validateLogin($data);
+		$userType = $this->users->validateLogin($data);
+		print_r($userType);
+		if(isset($userType)){
+			print_r($userType);
+		}else{
+			print_r("Some Error Occured ....!!!");
+		}
 	}
 }

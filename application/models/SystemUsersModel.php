@@ -45,15 +45,20 @@ class SystemUsersModel extends CI_Model {
 
 	function validateLogin($data)
 	{
-		$this->db->select('title, content, date');
-		$this->db->from('mytable');
-		$this->db->where('email', 'jayan@gmail.com');
+		$this->db->select('user_type');
+		$this->db->from('system_users');
+		$this->db->where('email', 'jayan1@gmail.com');
 		$this->db->where('password', '123456');
 		$this->db->where('status', 1);
 		$query = $this->db->get();
-
+	
 		if ($query) {
-			return $query->result();
+			$user_type = $query->result();
+
+			return $user_type[0]->user_type;
+		}else{
+
+			 return false;
 		}
 	}
 

@@ -98,7 +98,7 @@
     <script>
         function statusChange(a, b){
             var objData = {};
-            objData['status'] = a.value;
+            objData['status'] = a.valu e;
             objData['id'] = b;
             $(".alert-danger").css('display', 'none');
             $(".alert-success").css('display', 'none');
