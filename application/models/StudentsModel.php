@@ -11,6 +11,8 @@ class StudentsModel extends CI_Model {
 
 	function statusChange($id, $status)
 	{
+
+	    echo $status;
 		$data = array('status' => $status);
 		$this->db->set('status', $status);
 		$this->db->where('id', $id);
@@ -21,14 +23,43 @@ class StudentsModel extends CI_Model {
 
 	function getStudentList()
 	{
-		$this->db->select('*');
-		$query = $this->db->get($this->hostelStudents);
+            $this->db->select('*');
+            $this->db->from('hostel-student');
+            $query = $this->db->get();
 
-		if ($query) {
-			return $query->result();
-		}
+        if ($query) {
+            return $query->result();
+        }
+
 		return NULL;
+
+
 	}
+
+    function getStudentListSelected($status)
+    {
+        if($status != 'All'){
+            $this->db->select('*');
+            $this->db->from('hostel-student');
+            $this->db->where('status', $status);
+            $query = $this->db->get();
+
+        }else{
+            $this->db->select('*');
+            $this->db->from('hostel-student');
+            $query = $this->db->get();
+        }
+
+        echo json_encode($query->result());
+
+        exit;
+//        if ($query) {
+//            return json_encode($query->result());
+//        }
+//        return NULL;
+
+
+    }
 	
 	function getStudentsCount()
 	{

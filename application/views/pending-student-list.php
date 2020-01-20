@@ -27,15 +27,16 @@
 							</div>
                             <div class="card-body">
 								<div style="margin-top: :50px">
-									<select name="cars">
-										<option value="volvo">All</option>
-										<option value="volvo">Accept</option>
-										<option value="saab">Pending</option>
-										<option value="fiat">Reject</option>
+									<select name="approval_status" onchange="approvalStatusChange(this)">
+										<option value="All">All</option>
+										<option value="1">Accept</option>
+										<option value="0">Pending</option>
+										<option value="2">Reject</option>
 										</option>
 									</select>
 								</div>
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <div id="mydiv">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered dataTable">
                                     <thead>
                                         <tr>
 											<th>Admission No</th>
@@ -65,6 +66,7 @@
 									<?php } ?>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,6 +79,105 @@
 		<?php  include_once ('footer.php')?>
 
     </div>
+
+     <script type="text/javascript">
+
+         function statusChange(a, b){
+
+             var objData = {};
+             objData['status'] = a.value;
+             objData['sid'] = b;
+             $(".alert-danger").css('display', 'none');
+             $(".alert-success").css('display', 'none');
+
+             $.ajax({
+                 type: "POST",
+                 url: "<?php echo site_url('index.php/student/studentStatusChange'); ?>",
+                 data: objData,
+                 success: function(response){
+                     $(".alert-danger").css('display', 'none');
+                     $(".alert-success").css('display', 'block');
+                 },
+                 error: function(e) {
+                     $(".alert-danger").css('display', 'block');
+                     $(".alert-success").css('display', 'none');
+                     console.log(e.status);
+                 }
+             });
+         }
+
+         function approvalStatusChange(a){
+             var objData = {};
+             objData['status'] = a.value;
+
+             $.ajax({
+                 type: "POST",
+                 url: "<?php echo site_url('index.php/admission/pendingStudentListSelected'); ?>",
+                 data: objData,
+                 cache: false,
+                 success: function(data){
+
+                     var result = JSON.parse(data);
+
+                     var manageStatus = getStatus();
+
+                     var res = '';
+                      var status = ['Pending', 'Approved', 'Rejected'];
+                     $.each (result, function (key, value) {
+
+                         var stSelect = '<select name="status" onchange="statusChange(this, '+value.id+')" id="statusId" class="form-control">';
+
+                         $.each(manageStatus, function (key, val) {
+
+                             if(key == value.status){
+                                 var sld = 'selected'
+                             }else{
+                                 var sld = ''
+                             }
+
+                             stSelect += '<option '+sld+' value="'+key+'">'+val+'</option>';
+                         });
+
+                         stSelect += '</select>';
+
+                         res +=
+                             '<tr>'+
+                             '<td>'+value.id+'</td>'+
+                             '<td>'+value.full_name+'</td>'+
+                             '<td>'+value.grade+'</td>'+
+                             '<td>'+status[value.status]+'</td>'+
+                             '<td>' +stSelect+'</td>'+
+                             '</tr>';
+
+                         console.log(res);
+                         $('tbody').html("");
+                         $('tbody').html(res);
+
+                     });
+
+
+                 },
+                 error: function(e) {
+                     console.log(e.status);
+                 }
+             });
+
+         }
+
+
+         function getStatus(){
+
+             var dtArray = '';
+
+                 dtArray = {
+                     '0':'Pending',
+                     '1':'Approved',
+                     '2':'Rejected'
+             }
+             return dtArray;
+         }
+     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
@@ -94,31 +195,7 @@
     <script src="<?php echo base_url(); ?>assets/js/init/datatables-init.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script>
 
-function statusChange(a, b){
-    var objData = {};
-    objData['status'] = a.value;
-    objData['sid'] = b;
-    $(".alert-danger").css('display', 'none');
-    $(".alert-success").css('display', 'none');
-
-    $.ajax({
-        type: "POST",
-        url: "<?php echo site_url('index.php/student/studentStatusChange'); ?>",
-        data: objData,
-        success: function(response){
-            $(".alert-danger").css('display', 'none');
-            $(".alert-success").css('display', 'block');
-        },
-        error: function(e) {
-            $(".alert-danger").css('display', 'block');
-            $(".alert-success").css('display', 'none');
-            console.log(e.status);
-        }
-    });
-}
-</script>
 </body>
 
 </html>

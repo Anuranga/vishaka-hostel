@@ -51,4 +51,13 @@ class DailyExpenses extends CI_Controller {
 		}*/
 	}
 
+    function pdf_gen_expenses(){
+        $this->load->library('pdfgenerator');
+
+        $data['list'] = $this->expenses->getExpensesList();
+        $html = $this->load->view('expenses-pdf', $data, true);
+
+        $this->pdfgenerator->generate($html);
+    }
+
 }

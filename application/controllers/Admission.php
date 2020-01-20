@@ -23,9 +23,20 @@ class Admission extends CI_Controller {
 
 	public function pendingStudentList()
 	{
+        $data = array();
 		$data['list'] = $this->student->getStudentList();
+
 		$this->load->view('pending-student-list', $data);
 	}
+    public function pendingStudentListSelected()
+    {
+        $data = array();
+        if($this->input->post("status") != null){ $status = $this->input->post("status");} else { $status = 'All'; }
+        $data['list'] = $this->student->getStudentListSelected($status);
+
+        //$this->load->view('pending-student-list', $data);
+        //return $data;
+    }
 
     function pdf_gen(){
         $this->load->library('pdfgenerator');
