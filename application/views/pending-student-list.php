@@ -168,7 +168,6 @@
          function getStatus(){
 
              var dtArray = '';
-
                  dtArray = {
                      '0':'Pending',
                      '1':'Approved',
