@@ -51,14 +51,7 @@ class StudentsModel extends CI_Model {
         }
 
         echo json_encode($query->result());
-
         exit;
-//        if ($query) {
-//            return json_encode($query->result());
-//        }
-//        return NULL;
-
-
     }
 	
 	function getStudentsCount()

@@ -31,6 +31,12 @@ class GatePass extends CI_Controller {
 		$this->load->view('gate-pass-list', $data);
 	}
 
+    public function gatePassListSelected()
+    {
+        if($this->input->post("status") != null){ $status = $this->input->post("status");} else { $status = 'All'; }
+        $data['list'] = $this->gatepass->getGatepassListSelected($status);
+    }
+
 	public function addGatePassRecord()
 	{
 		$data = array(

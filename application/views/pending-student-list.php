@@ -26,17 +26,20 @@
 							    <strong>Danger!</strong> Some Error Occured.
 							</div>
                             <div class="card-body">
-								<div style="margin-top: :50px">
-									<select name="approval_status" onchange="approvalStatusChange(this)">
-										<option value="All">All</option>
-										<option value="1">Accept</option>
-										<option value="0">Pending</option>
-										<option value="2">Reject</option>
-										</option>
-									</select>
-								</div>
-                                <div id="mydiv">
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered dataTable">
+                                <div class="row">
+                                    <div class="col-md-10"></div>
+                                    <div class="col-md-2">
+                                        <select name="approval_status" onchange="approvalStatusChange(this)" class="form-control">
+                                            <option value="All">All</option>
+                                            <option value="0">Pending</option>
+                                            <option value="1">Approved</option>
+                                            <option value="2">Reject</option>
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <table id="bootstrap-data-table" class="table table-striped table-hover table-bordered">
+
                                     <thead>
                                         <tr>
 											<th>Admission No</th>
@@ -66,7 +69,6 @@
 									<?php } ?>
                                     </tbody>
                                 </table>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,11 +120,13 @@
                  success: function(data){
 
                      var result = JSON.parse(data);
+                     if(result.length > 0) {
 
                      var manageStatus = getStatus();
 
                      var res = '';
                       var status = ['Pending', 'Approved', 'Rejected'];
+
                      $.each (result, function (key, value) {
 
                          var stSelect = '<select name="status" onchange="statusChange(this, '+value.id+')" id="statusId" class="form-control">';
@@ -149,11 +153,14 @@
                              '<td>' +stSelect+'</td>'+
                              '</tr>';
 
-                         console.log(res);
                          $('tbody').html("");
                          $('tbody').html(res);
 
                      });
+
+                     }else{
+                         $('tbody').html("");
+                     }
 
 
                  },

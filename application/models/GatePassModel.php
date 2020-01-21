@@ -23,22 +23,49 @@ class GatePassModel extends CI_Model {
 
 	function getGatepassList()
 	{
-		$query = $this->db->query("SELECT *, 
-		`gate_pass`.`id`,
-		`visitors`.`full_name`,
-		`visitors`.`mobile`,
-		`gate_pass`.`reason`,
-		`gate_pass`.`out_time`,
-		`gate_pass`.`in_time`,
-		`gate_pass`.`status`
-		FROM `gate_pass` 
-		JOIN `visitors` ON `visitors`.`id` = `gate_pass`.`vid`");
+//		$query = $this->db->query("SELECT *,
+//		`gate_pass`.`id`,
+//		`visitors`.`full_name`,
+//		`visitors`.`mobile`,
+//		`gate_pass`.`reason`,
+//		`gate_pass`.`out_time`,
+//		`gate_pass`.`in_time`,
+//		`gate_pass`.`status`
+//		FROM `gate_pass`
+//		JOIN `visitors` ON `visitors`.`id` = `gate_pass`.`vid`");
+
+        $this->db->select('gate_pass.id,gate_pass.reason,gate_pass.out_time,gate_pass.in_time,gate_pass.status,visitors.full_name,visitors.mobile');
+        $this->db->from('gate_pass');
+        $this->db->join('visitors', 'gate_pass.vid=visitors.id');
+        $query = $this->db->get();
+
 		if ($query) {
 			return $query->result();
 		}
 
 		return NULL;
 	}
+
+    function getGatepassListSelected($status)
+    {
+        if($status != 'All'){
+
+            $this->db->select('gate_pass.id,gate_pass.reason,gate_pass.out_time,gate_pass.in_time,gate_pass.status,visitors.full_name,visitors.mobile');
+            $this->db->from('gate_pass');
+            $this->db->where('gate_pass.status', $status);
+            $this->db->join('visitors', 'gate_pass.vid=visitors.id');
+            $query = $this->db->get();
+
+        }else{
+            $this->db->select('gate_pass.id,gate_pass.reason,gate_pass.out_time,gate_pass.in_time,gate_pass.status,visitors.full_name,visitors.mobile');
+            $this->db->from('gate_pass');
+            $this->db->join('visitors', 'gate_pass.vid=visitors.id');
+            $query = $this->db->get();
+        }
+
+        echo json_encode($query->result());
+        exit;
+    }
 	
 	function getGatePassCount()
 	{
